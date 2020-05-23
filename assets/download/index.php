@@ -9,7 +9,7 @@
 	$cpwd = $_REQUEST['p'] ?? 'FKPWD';
 	$lang = $_REQUEST['l'] ?? 'es';
 
-	$sec = "http://expofinder.uma.es/wp-admin/admin-ajax.php?q=pathfinder&action=csl_generic_ajax_call&f=json&c=z&x=c&u=$cusr@$cpwd";
+	$sec = "NOT_PUBLIC_URL";
 	$dfile = file_get_contents($sec);
 	$isauth = json_decode($dfile)->credentials->cauth;
 	if(!$isauth) {
@@ -18,7 +18,7 @@
 		exit(0);
 	}
 	
-	$url = "http://expofinder.uma.es/wp-content/themes/csl/pathwise.php?l=$lang";
+	$url = "NOT_PUBLIC_URL";
 	
 	if (substr ($url, 0, 7) != "http://"
 		&& substr ($url, 0, 8) != "https://"
