@@ -1,0 +1,83 @@
+<h3 class="w3-text-theme">Condiciones</h3>
+
+<p>
+	Un filtro está formado por un número arbitrario y no limitado de <em>condiciones</em>. 
+	Cada una de ellas representa una <em>restricción</em> en los registros que 
+	<strong>Pathwise</strong> mostrará.
+</p>
+
+<p>
+	Una condición es un requisito que los <em>metados</em> asociados a un registro 
+	primario deberán cumplir. Si desea más información sobre los conceptos de 
+	metadato y registros primarios, 
+	<a href="./#/hlp">pulse aquí</a>. Un metadato puede ser, por ejemplo, 
+	el género de un actor, su nacionalidad o su fecha de nacimiento.
+</p>
+
+<p>
+	Las <em>relaciones</em> vinculan a registros primarios entre sí, y no forman parte de las 
+	condiciones, pero sí pueden ser incluidas, si se desea.
+</p>
+
+<p>
+	Cada condición está formada por 3 elementos. De izquierda a derecha son los siguientes:
+</p>
+
+<dl>
+	<dt>Característica</dt>
+	<dd>
+        Metainformación que se atribuye a un determinado registro primario y que contribuye a describirlo. 
+        Por ejemplo, <em>fecha de apertura</em> en una exposición.
+	</dd>
+	<dt>Condición</dt>
+	<dd>
+		Comparación que se establece entre el valor que se especifique 
+		y el contenido de la característica seleccionada. El resultado de la comparación 
+		deberá ser cierto. Por ejemplo <em>mayor o igual</em> que el valor especificado.
+	</dd>
+	<dt>Valor</dt>
+	<dd>
+		Texto o número que deberá ser comparado con la característica. 
+		Por ejemplo, <em>2010</em>.
+	</dd>
+</dl>
+
+<p>
+	Para generar una condición válida hay que cumplimentar los campos <em>obligatorios</em>: 
+	característica y operación. Esto es así porque hay operaciones que no necesitan un 
+	valor; por ejemplo <em>sea nulo</em> o <em>no sea nulo</em>. Si un campo no ha sido 
+	cumplimentado, su bord aparece en color <span class="color-red-400">rojo</span>.
+</p>
+
+<p>
+	Puede agregar condiciones pulsando el botón <em>Añadir</em>. El botón 
+	<em>Limpiar</em> borra todas ellas, aunque mantiene, sin característica ni operación, 
+	la primera. Para borrar una condición pulse sobre el icono 
+	<img src="./assets/images/icons/trash.svg" height="16">.
+</p>
+
+<h4 class="w3-text-theme">Relaciones</h4>
+
+<p>
+	Los registros primarios (y no los metadatos) pueden tener vínculos mutuos de dependencia. 
+	Por ejemplo, un actor puede depender de una exposición a título de comisario. 
+	<strong>Pathwise</strong> permite incluirlas en la definición de un filtro.
+</p>
+
+<p>
+	Puede añadir relaciones simplemente escribiendo todo o parte de su contenido. Por ejemplo, 
+	"actor comisario (exposición > actor)". En cada caso se muestra el tipo de relación y 
+	la dirección del vínculo (entre exposición y actor). Para borrar una de ellas, 
+	pulse el botón rojo situado a su derecha.
+</p>
+
+<h4 class="w3-text-theme">Guardar y recuperar</h4>
+
+<p>
+	Un filtro permanece activo hasta que se defina uno nuevo o se elimine pulsando 
+	el botón <em>Limpiar</em>. Pero algunos pueden tener numerosas condiciones y relaciones. 
+	Para evitar tener que reescribirlos, es posible guardar su definición, que se 
+	almacena en un archivo cuya ubicación el usuario cliente puede decidir, pulsando 
+	el botón <em>Guardar</em>. Posteriormente, puede ser recuperado y 
+	reactivado pulsando el botón <em>Cargar</em> y escogiendo el archivo deseado. 
+</p>

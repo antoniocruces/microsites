@@ -1,0 +1,42 @@
+<h3 class="w3-text-theme">Proceso de carga</h3>
+
+<p>
+    Microsites utiliza un archivo remoto en formato   
+	<a rel="noopener" href="https://www.sqlite.org/index.html" target="_blank">SQLite v3</a>, 
+	generado por <a href="http://expofinder.uma.es" target="_blank">ExpoFinder</a> y 
+	guardado en el servidor de aplicación, <a href="https://hdplus.es" target="_blank">HD+</a>. 
+	El contenido de dicho archivo se pone automáticamente al día con regularidad, aunque 
+	sus datos no están actualizados en tiempo real.
+</p>
+<p>
+	En realidad, Microsites descarga el archivo en el ordenador cliente y lo carga en memoria. 
+	No lo almacena en el disco. El tiempo de descarga varía en función de la velocidad de la 
+	red local. Para unas condiciones normales en una instalación en domicilio, la velocidad 
+	ronda los 3 MB/s y el tiempo oscila entre 15 y 20 segundos. Durante el proceso se indica 
+	el porcentaje de datos recuperados. No es posible interactuar con la aplicación 
+	durante la descarga.
+</p>
+<p>
+	<span class="w3-red">&nbsp;IMPORTANTE&nbsp;</span> Durante una sesión de trabajo con Microsites 
+	(es decir, mientras no se recargue la página) <b>solo se descargará una única vez 
+	la base de datos</b>. Si embargo, si el usuario cambia la colección activa, Microsites (MS) 
+	tendrá que seleccionar un nuevo subconjunto de registros y, en consecuencia, volverá 
+	a realizar el recuento. MS avisará al usuario antes de recargar la página. La recarga 
+	en ningún caso supone una pérdida de datos.
+</p>
+
+<h3 class="w3-text-theme">Proceso de recuento</h3>
+
+<p>
+    Microsites realiza un recuento básico del subconjunto de registros primarios 
+    (ver al respecto <a href="./#/legends">aquí</a>) cuando se inicia el trabajo con 
+    una colección. Los cálculos que efectúa se representan en las siguientes tablas.
+</p>
+
+<ul class="w3-ul">
+	<li>Recuento de registros primarios</li>
+	<li>Recuento general</li>
+	<li>Tablas auxiliares</li>
+	<li>Recuento por tipo</li>
+	<li>Recuento por tipo y clave</li>
+</ul>

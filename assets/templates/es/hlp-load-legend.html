@@ -1,0 +1,48 @@
+<h3 class="w3-text-theme">Estructura</h3>
+
+<p>
+    Microsites utiliza un archivo remoto en formato   
+	<a rel="noopener" href="https://www.sqlite.org/index.html" target="_blank">SQLite v3</a>, 
+	generado por <a href="http://expofinder.uma.es" target="_blank">ExpoFinder</a> y 
+	guardado en el servidor de aplicación, <a href="https://hdplus.es" target="_blank">HD+</a>. 
+	Las tablas que lo componen sirven a diferentes propósitos. Se muestra su estructura 
+	para permitir operar con ellas desde la opción <a href="./#/sql">SQL</a> o utilizando 
+	<a href="./sqlab" target="_blank" rel="nofollow">SQLab</a>. Se muestra el nombre de 
+	cada tabla y su descripción, así como la lista de campos que la componen y su tipo.
+</p>
+
+<h3 class="w3-text-theme">Leyenda</h3>
+
+<ul class="w3-ul">
+	<li>
+		Tipos de campo: INTEGER = número entero; VARCHAR = texto de longitud variable; DATE = fecha; NOT NULL = no acepta valores nulos.
+	</li>
+	<li>
+		Prefijos: start = inicial; end = final; age = edad.
+	</li>
+	<li>
+		Sufijos: y = año; m = mes; d = día; w = semana.
+	</li>
+	<li>
+		Campos utilitarios: ID = número ID; RID = número ID relacionado; rtype/idtype = tipo de registro; 
+		ridtype = tipo de registro relacionado; rkey = clave de registro; value = valor de registro.
+	</li>
+</ul>
+
+<h3 class="w3-text-theme">Tablas especiales</h3>
+
+<ul class="w3-ul">
+	<li>
+		FLT. Filtro. Cada colección dispone de uno independiente. Todos los registros de la misma deben incluir en ella su ID.
+	</li>
+	<li>
+		REL. Relaciones de primer grado. Del tipo 
+		<code class="w3-codespan">ID reg. A &rarr; tipo rel. A-B &rarr; ID reg. B</code>
+	</li>
+	<li>
+		LNK. Relaciones de segundo grado. Del tipo 
+		<code class="w3-codespan">ID reg. A &rarr; <span class="w3-grey">tipo rel. A-B &rarr; ID reg. B &rarr; tipo rel. B-C &rarr;</span> ID reg. C</code>
+		<br>
+		<small>NOTA: las relaciones A-B y B-C, que aparecen en color <span class="w3-grey">gris</span>, no se muestran.</small>
+	</li>
+</ul>

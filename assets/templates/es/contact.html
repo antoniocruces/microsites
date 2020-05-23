@@ -1,0 +1,108 @@
+<div class="w3-row w3-padding">
+	<div class="w3-container">
+		<h4 class="w3-text-grey">Presentación</h4>
+		<h1 class="w3-text-theme">
+			Contacto
+		</h1>
+
+		<p>
+			<strong>Pathwise</strong> es un proyecto de código abierto, de propósito académico y orientado a la investigación 
+			en el ámbito de la Historia del Arte Digital. El equipo de desarrollo estará encantado de atender 
+			cualquier consulta que desee dirigirle. Por favor, en el mensaje que nos envíe asegúrese de incluir 
+			como referencia su nombre de usuario ExpoFinder y, si es posible, la fecha de la descarga de datos 
+			más reciente desde ExpoFinder, así como la dirección IP que se usó para efectuar 
+			la conexión. El sistema ha detectado los siguientes datos:
+		</p>
+
+		<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-padding-large" id="current-location">
+			<i class="fas fa-cog fa-spin w3-text-red"></i> Calculando&hellip;
+		</div>
+
+		<div class="w3-row w3-margin-bottom">
+			<div id="contact-address" class="w3-col l6 m6 s12">
+				<p>
+					<strong>Nuria Rodríguez Ortega</strong><br>
+					<strong>Antonio Cruces Rodríguez</strong><br><br>
+					Universidad de Málaga.<br>
+					Facultad de Filosofía y Letras.<br>
+					Departamento de Historia del Arte.<br>
+					Campus de Teatinos. Bulevar Louis Pasteur, s/n.<br>
+					29071 Málaga (España).<br>
+					<i class="fas fa-phone-square"></i> +34 952 131 690.<br>
+					<i class="fas fa-envelope-square"></i> 
+					<a href="mailto:nro@uma.es">nro@uma.es</a>, 
+					<a href="mailto:antonio.cruces@uma.es">antonio.cruces@uma.es</a>.
+				</p>
+				<!--
+				<p>
+					<a class="w3-button w3-theme-d5 show-message" 
+						href="mailto:antonio.cruces@uma.es?cc=nro@uma.es&subject=Pathwise%20Contact%20Form">
+					Enviar mensaje</a>
+				</p>
+				-->
+			</div>
+			<div id="contact-history" class="w3-col l6 m6 s12">
+				<p>      
+					<label class="w3-text-grey">Nombre o institución</label>
+					<input id="msg-name" class="w3-input" type="text" required>
+				</p>
+				<p>      
+					<label class="w3-text-grey">Asunto</label>
+					<select id="msg-subject" class="w3-select">
+						<option value="consulta genérica">Consulta genérica</option>
+						<option value="solicitud de colaboración">Solicitud de colaboración</option>
+						<option value="informe de error">Informe de error</option>
+						<option value="otros motivos">Otros motivos</option>
+					</select>
+				</p>
+				<p>      
+					<label class="w3-text-grey">Mensaje</label>
+					<textarea id="msg-message" class="w3-input"></textarea>
+				</p>
+				<p>
+					<a class="w3-button w3-theme-d5 send-message" href="javascript:;">Enviar mensaje</a>
+				</p>
+			</div>
+		</div>
+		
+		<div class="w3-row w3-margin-bottom">
+			<div class="w3-col s12 m6 l4" style="padding-right:16px">
+				<select id="baselayers_contact" class="w3-select"></select>
+			</div>
+			<div class="w3-col s12 m6 l4" style="padding-right:16px">
+				<select id="overlays_contact" class="w3-select"></select>
+			</div>
+			<div class="w3-col s12 m6 l4">
+				<input type="search" id="search_contact" class="w3-input" placeholder="buscar lugar + ↵">
+			</div>
+		</div>
+		
+		<p class="w3-small w3-text-grey" style="margin-bottom:0">
+			CTRL + botón izquierdo o derecho del ratón: girar o inclinar mapa. 
+			F = pantalla completa; X = exportar; D = distancia; A = área; +/- = zoom.
+		</p>
+		
+		<div id="map_contact" class="w3-display-container w3-row w3-margin-bottom" style="height:45vh;z-index:0">
+			<div class="w3-display-middle">
+				<i class="fas fa-cog fa-spin w3-text-red"></i> Trabajando&hellip;
+			</div>
+		</div>
+		
+		<p id="address_contact"></p>
+				
+		<div class="w3-row">
+			<h3 class="w3-text-theme">
+				Noticias de 
+				<a href="https://iarthislab.es/" target="_blank" rel="noopener">iArtHis_LAB</a>
+			</h3>
+			<div id="news-container" class="w3-col">
+				<i class="fas fa-cog fa-spin w3-text-red"></i> 
+				Buscando noticias&hellip;
+			</div>
+		</div>
+
+		<div class="w3-clear nextprev w3-margin-top w3-margin-bottom">
+			<a class="w3-btn w3-left w3-theme-d1" href="./#/development">❮ <span class="w3-hide-small">Desarrollo</span></a>
+		</div>
+	</div>
+</div>

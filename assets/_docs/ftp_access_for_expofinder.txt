@@ -1,0 +1,4 @@
+user: sftp_expofinder@hdplus.es
+server: ssh.strato.com
+port: 22
+password: 3_2MTNtknLdi_5D

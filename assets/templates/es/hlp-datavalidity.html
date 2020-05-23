@@ -1,0 +1,23 @@
+<h3 class="w3-text-theme">Vigencia de los datos</h3>
+
+<p>
+	<strong>Pathwise</strong> utiliza un archivo de base de datos de tipo SQLite v3.x, que es generado 
+	por el servidor de datos (expofinder.uma.es). Hay dos formas de trabajar con dicho archivo.
+</p>
+
+<ol style="list-style-type:upper-alpha">
+	<li>
+		Generando uno "al vuelo", con la información que está conservada en el servidor en el 
+		momento de realizar la solicitud. Dicho archivo es descargado directamente en el ordenador 
+		cliente y abierto desde allí para poder trabajar con él.
+	</li>
+	<li>
+		Utilizando una "copia estática", que el servidor realiza periódicamente. En este caso, 
+		el archivo no se descarga, sino que se abre de forma remota.
+	</li>
+</ol>
+
+<p>
+	El método A permite conservar el archivo a modo de "foto fija" del estado de ExpoFinder en 
+	un momento dado, y facilita la realización de comparaciones.
+</p>

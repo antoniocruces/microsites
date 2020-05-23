@@ -1,0 +1,123 @@
+<div class="w3-row w3-padding">
+	<div class="w3-container">
+		<h4 class="w3-text-grey">Datos</h4>
+		<h1 class="w3-text-theme">
+			Filtro
+		</h1>
+
+		<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-padding-large w3-no-print">
+			La definición de un filtro limita TODOS los resultados, análisis y 
+			cálculos realizados por <strong>Pathwise</strong>. Sea cuidadoso con su definición. 
+			Si desea <strong>ayuda</strong> sobre la construcción de un filtro, 
+			<a class="help-window" data-help="filter" href="javascript:;">pulse aquí</a>. 
+			<span id="performance-msg"></span>
+		</div>
+
+		<div id="filter-warning" class="w3-panel w3-pale-red w3-leftbar w3-border-red w3-padding-large w3-no-print" style="display:none;">
+			<i class="fas fa-bomb w3-text-red"></i>
+			No hay ninguna base de datos cargada.
+		</div>
+
+		<div id="filter-container" style="display:none">
+			<div class="tabs">
+				<div class="w3-bar w3-theme w3-no-print">
+					<button class="w3-bar-item w3-button tablink tabbar w3-theme-l3" data-target="filter">
+						<span class="w3-tag w3-indigo" data-target="filter">1</span> Filtro
+					</button>
+					<button class="w3-bar-item w3-button tablink tabbar" data-target="database-listing-result">
+						<span class="w3-tag w3-green" data-target="database-listing-result">2</span> Recuento 
+					</button>
+				</div>
+
+				<div id="filter" class="w3-row-padding w3-border w3-padding tab">
+					<div class="w3-row">
+						<div class="w3-col s12 m12 l12" style="padding-left:0;padding-top:8px;">
+							<input type="file" name="flt-file" accept="application/json" id="flt-file" style="display:none">
+							<button class="w3-button w3-theme-d5" id="flt-group-add" style="margin:0">Nuevo grupo</button>
+							<button class="w3-button w3-theme-d5" id="flt-clear" style="margin:0" disabled>Limpiar</button>
+							<button class="w3-button w3-theme-d5" id="flt-load" style="margin:0">Cargar</button>
+							<button class="w3-button w3-theme-d5" id="flt-save" style="margin:0" disabled>Guardar</button>
+							<button class="w3-button w3-theme-d5" id="flt-calculate" style="margin:0" disabled>Calcular</button>
+						</div>
+					</div>
+					<div class="w3-row">
+						<div class="w3-col s12 m12 l12" style="padding-left:0;padding-top:8px;">
+							Incluir:&nbsp;&nbsp;
+							<input id="checkbox-1" class="w3-check" type="checkbox">
+							<label for="checkbox-1">
+								registros relacionados
+							</label>
+						</div>
+					</div>
+					
+					<div class="w3-row flt-group" data-order="0" style="margin-top:0;margin-bottom:0">
+						<h4>
+							<span class="w3-tag flt-group-id">1</span>
+							<a href="javascript:;"  
+								class="flt-condition-add w3-margin-left" 
+								style="display:inline-block;font-size:20px">
+								nueva condición
+							</a>
+							<a href="javascript:;" 
+								class="flt-group-remove w3-margin-left" 
+								style="display:inline-block;font-size:20px">
+								borrar grupo
+							</a>
+							<span class="w3-text-gray w3-margin-left">
+								[*] = obligatorio
+							</span>
+						</h4>
+						<div class="w3-row w3-leftbar flt-link-wrapper" style="display:none">
+							<div class="w3-col s12 m3 l3 w3-padding switch-field flt-link-field" style="display:none">
+								<select class="flt-link w3-select" style="display:inline"> 
+									<option value="AND">AND</option>
+									<option value="AND NOT">AND NOT</option>
+									<option value="OR">OR</option>
+									<option value="OR NOT">OR NOT</option>
+								</select>
+							</div>
+							<div class="w3-col s12 m3 l3 w3-padding">
+								<select class="flt-relation w3-select" style="display:inline" disabled></select>
+							</div>
+						</div>
+						<div class="w3-row w3-leftbar flt-condition" data-condition="0">
+							<div class="w3-col s12 m3 l3 w3-padding">
+								<select class="w3-select flt-feature invalid" disabled></select>
+							</div>
+							<div class="w3-col s12 m3 l3 w3-padding">
+								<select class="w3-select flt-operator invalid" disabled>
+									<option value="LIKE">LIKE</option>
+									<option value="NOT LIKE">NOT LIKE</option>
+									<option value="GLOB">GLOB</option>
+									<option value="NOT GLOB">NOT GLOB</option>
+									<option value="=">=</option>
+									<option value="<>">&lt;&gt;</option>
+									<option value="IS NULL">IS NULL</option>
+									<option value="IS NOT NULL">IS NOT NULL</option>
+									<option value="<">&lt;</option>
+									<option value=">">&gt;</option>
+									<option value="<=">&lt;=</option>
+									<option value=">=">&gt;=</option>
+								</select>
+							</div>
+							<div class="w3-col s12 m3 l3 w3-padding">
+								<input type="text" class="w3-input flt-value invalid" placeholder="Escriba un valor">
+							</div>
+							<div class="w3-col s12 m3 l3 w3-padding">
+								<a href="javascript:;" class="w3-button flt-condition-list">lista&hellip;</a>
+								<a href="javascript:;" class="w3-button w3-text-red flt-condition-remove">borrar</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="database-listing-result" class="w3-row-padding w3-border w3-padding tab" style="display:none"></div>
+			</div>
+		</div>		
+
+		<div class="w3-clear nextprev w3-margin-top w3-margin-bottom">
+			<a class="w3-btn w3-left w3-theme-d1" href="./#/load">❮ <span class="w3-hide-small">Carga</span></a>
+			<a class="w3-btn w3-right w3-theme-d1" href="./#/listing"><span class="w3-hide-small">Listado</span> ❯</a>
+		</div>
+	</div>
+</div>

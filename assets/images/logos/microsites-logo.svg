@@ -1,0 +1,40 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" fill="#C9E8FA" height="362.687" width="423.631" y="1.176" x="88.369"/>
+  <rect id="svg_2" fill="#FD7052" height="72.731" width="423.631" y="1.176" x="88.369"/>
+  <rect id="svg_3" fill="#B6E0F7" height="362.687" width="211.816" y="1.176" x="300.184"/>
+  <rect id="svg_4" fill="#FF4F18" height="72.731" width="211.816" y="1.176" x="300.184"/>
+  <g id="svg_5">
+   <rect id="svg_6" fill="#F4F4F4" height="18.525" width="18.525" y="25.879" x="410.777"/>
+   <rect id="svg_7" fill="#F4F4F4" height="18.525" width="18.525" y="25.879" x="439.792"/>
+   <rect id="svg_8" fill="#F4F4F4" height="18.525" width="18.525" y="25.879" x="468.808"/>
+  </g>
+  <rect id="svg_9" fill="#C9E8FA" height="362.687" width="423.631" y="148.138"/>
+  <rect id="svg_10" fill="#FD7052" height="72.731" width="423.631" y="148.138"/>
+  <rect id="svg_11" fill="#B6E0F7" height="362.687" width="211.816" y="148.138" x="211.816"/>
+  <rect id="svg_12" fill="#FF4F18" height="72.731" width="211.816" y="148.138" x="211.816"/>
+  <g id="svg_13">
+   <rect id="svg_14" fill="#F4F4F4" height="18.525" width="18.525" y="172.838" x="322.408"/>
+   <rect id="svg_15" fill="#F4F4F4" height="18.525" width="18.525" y="172.838" x="351.424"/>
+   <rect id="svg_16" fill="#F4F4F4" height="18.525" width="18.525" y="172.838" x="380.439"/>
+  </g>
+  <g id="svg_23"/>
+  <g id="svg_24"/>
+  <g id="svg_25"/>
+  <g id="svg_26"/>
+  <g id="svg_27"/>
+  <g id="svg_28"/>
+  <g id="svg_29"/>
+  <g id="svg_30"/>
+  <g id="svg_31"/>
+  <g id="svg_32"/>
+  <g id="svg_33"/>
+  <g id="svg_34"/>
+  <g id="svg_35"/>
+  <g id="svg_36"/>
+  <g id="svg_37"/>
+  <text font-weight="bold" transform="matrix(5.123568334858249,0,0,4.566920073381454,-535.8068537822688,-1356.8590954040972) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" id="svg_38" y="382.00461" x="126.43561" stroke-width="0" fill="#FD7052">M</text>
+  <text id="svg_39" font-weight="bold" transform="matrix(5.123568334858249,0,0,4.566920073381454,-535.8068537822688,-1356.8590954040972) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="381.11495" x="166.51099" stroke-width="0" fill="#FF4F18">S</text>
+ </g>
+</svg>

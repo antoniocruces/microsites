@@ -1,0 +1,59 @@
+<div class="w3-row w3-padding">
+	<div class="w3-container">
+		<h4 class="w3-text-grey">Datos</h4>
+		<h1 class="w3-text-theme">
+			SQL
+		</h1>
+
+		<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-padding-large w3-no-print">
+			Las consultas SQL <strong>no se realizan únicamente sobre el subconjunto de registros activos  
+			en un microsite, sino sobre todo el conjunto de datos</strong>. 
+			Por razones de eficiencia, la cantidad de filas devueltas está globalmente limitada. 
+			Si desea saber más sobre el lenguaje SQL o sobre esta página, 
+			<a class="help-window" data-help="sql" href="javascript:;">pulse aquí</a>. 
+			<span id="performance-msg"></span>
+		</div>
+		
+		<div id="sql-warning" class="w3-panel w3-pale-red w3-leftbar w3-border-red w3-padding-large w3-no-print" style="display:none;">
+			No hay ninguna base de datos cargada.
+		</div>
+
+		<div id="sql-form" style="display:none">
+			<h2 class="h3" style="display:none">Comandos</h2>
+			
+			<div class="w3-row">
+				<label style="padding-left:0">
+					Escriba comandos válidos SQL. Separe consultas sucesivas con <mark> ; </mark>
+				</label>
+				<textarea id="commands-editor" class="w3-input w3-margin-top sql" rows="4" placeholder="Escriba los comandos SQL aquí"></textarea>
+			</div>
+			
+			<div class="w3-row w3-margin-top">
+				<div class="w3-col l10 s12">
+					<button class="w3-button w3-theme-d5" id="execute-trigger" style="display:inline-block">ejecutar</button>
+					<button class="w3-button w3-theme-d5" id="clear-trigger" style="display:inline-block">limpiar</button>
+				</div>
+				<div class="w3-col l2 s12 w3-right-align">
+					<select class="w3-select" id="query-rowlimit" style="display:inline-block">
+						<option value="1">máx. 1 fila</option>
+						<option value="5">máx. 5 filas</option>
+						<option value="10">máx. 10 filas</option>
+						<option value="50">máx. 50 filas</option>
+						<option value="100">máx. 100 filas</option>
+						<option value="1000">máx. 1.000 filas</option>
+						<option value="5000">máx. 5.000 filas</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		
+		<div id="database-result" style="display:none">
+			<h2 class="h3">Resultado</h2>
+			<div class="w3-container" id="database-listing-result"></div>
+		</div>
+		
+		<div class="w3-clear nextprev w3-margin-top w3-margin-bottom">
+			<a class="w3-btn w3-left w3-theme-d1" href="./#/search">❮ <span class="w3-hide-small">Búsqueda</span></a>
+		</div>
+	</div>
+</div>

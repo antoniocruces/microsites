@@ -1,0 +1,128 @@
+<h3 class="w3-text-theme">SQL</h3>
+
+<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-padding-large w3-no-print">
+	Microsites (MS) usa la biblioteca de código 
+	<span class="w3-tooltip">SQL
+		<span class="w3-text"><em>= Structured Query Language</em></span>
+	</span>.js, escrita por 
+	<span class="w3-tooltip">kripken
+		<span class="w3-text">
+			<em>alias de Alon Zakai, ingeniero de software que trabajó en Google y Mozilla</em>
+		</span>
+	</span> con tecnología 
+	<span class="w3-tooltip">WASM
+		<span class="w3-text">
+			<em>= Web Assembly</em>
+		</span>
+	</span>, que utiliza subconjunto de reglas ANSI/SQL. Con ellas 
+	puede construir cuantas consultas desee. Los resultados son exportables. 
+
+	<p>
+		<a class="w3-button w3-theme-l4" rel="nofollow" href="https://github.com/kripken/sql.js/" target="_blank">
+			<i class="fas fa-external-link-alt"></i> 
+			SQL.js
+		</a>
+		<a class="w3-button w3-theme-l4" rel="nofollow" href="https://kripken.github.io/blog/about/" target="_blank">
+			<i class="fas fa-external-link-alt"></i> 
+			Alon Zakai
+		</a>
+		<a class="w3-button w3-theme-l4" rel="nofollow" href="https://webassembly.org/" target="_blank">
+			<i class="fas fa-external-link-alt"></i> 
+			WASM
+		</a>
+		<a class="w3-button w3-theme-l4" rel="nofollow" href="https://en.wikipedia.org/wiki/SQL" target="_blank">
+			<i class="fas fa-external-link-alt"></i> 
+			ANSI/SQL
+		</a>
+		<a class="w3-button w3-theme-l4" rel="nofollow" href="https://www.sqlite.org/lang.html" target="_blank">
+			<i class="fas fa-external-link-alt"></i> 
+			SQL en SQLite
+		</a>
+	</p>
+	<p class="w3-small" style="margin-bottom:0">
+		Parte de la información es una reelaboración de la ofrecida en 
+		<a href="https://geotalleres.readthedocs.io/es/latest/conceptos-sql/conceptos_sql.html" target="_blank" rel="nofollow">
+			GeoTalleres</a>.
+	</p>
+</div>
+
+<div class="w3-panel w3-sand w3-leftbar w3-border-orange w3-padding-large w3-no-print">
+	IMPORTANTE: Todas las operaciones de MS se realizan en la memoria volátil del ordenador cliente. En ningún momento la 
+	base de datos cargada se verá afectada, pero <em>cualquier alteración que realice en las tablas del sistema 
+	puede afectar a los resultados obtenidos durante la sesión de trabajo actual</em>.
+</div>
+
+<h4 class="w3-text-theme">Tablas y campos</h4>
+
+<p class="w3-small">
+	Leyenda: INTEGER = número entero; VARCHAR = texto de longitud variable; DATE = fecha; NOT NULL = no acepta valores nulos.<br>
+	Prefijos: start = inicial; end = final; age = edad.<br>
+	Sufijos: y = año; m = mes; d = día; w = semana. 
+	Campos utilitarios: ID = número ID; RID = número ID relacionado; rtype/idtype = tipo de registro; 
+	ridtype = tipo de registro relacionado; rkey = clave de registro; value = valor de registro.
+</p>
+
+<table class="w3-table w3-bordered">
+	<tr>
+		<th>Tabla</th>
+		<th>Contenido</th>
+		<th>Campos</th>
+	</tr>
+	<tr>
+		<td>pos</td>
+		<td>registros primarios</td>
+		<td>"ID" INTEGER NOT NULL, "rtype" VARCHAR, "rkey" VARCHAR, "value" VARCHAR</td>
+	</tr>
+	<tr>
+		<td>age</td>
+		<td>fechas y edades</td>
+		<td>
+			"ID" INTEGER NOT NULL, "rtype" VARCHAR, "start" DATE, "starty" INTEGER, "startm" INTEGER, "startd" INTEGER, 
+			"startw" INTEGER, "endy" INTEGER, "endm" INTEGER, "endd" INTEGER, "endw" INTEGER, "agey" INTEGER, "agem" INTEGER,
+			"agew" INTEGER, "aged" INTEGER
+		</td>
+	</tr>
+	<tr>
+		<td>gen</td>
+		<td>géneros</td>
+		<td>"ID" INTEGER NOT NULL, "rtype" VARCHAR, "gender" VARCHAR</td>
+	</tr>
+	<tr>
+		<td>map</td>
+		<td>geoposiciones</td>
+		<td>"ID" INTEGER NOT NULL, "rtype" VARCHAR, "latitude" VARCHAR, "longitude" VARCHAR</td>
+	</tr>
+	<tr>
+		<td>pla</td>
+		<td>lugares</td>
+		<td>"ID" INTEGER NOT NULL, "rtype" VARCHAR, "town" VARCHAR, "region" VARCHAR, "country" VARCHAR</td>
+	</tr>
+	<tr>
+		<td>tax</td>
+		<td>taxonomías</td>
+		<td>"ID" INTEGER NOT NULL, "rtype" VARCHAR, "rkey" VARCHAR, "value" VARCHAR</td>
+	</tr>
+	<tr>
+		<td>met</td>
+		<td>metadatos</td>
+		<td>"ID" INTEGER NOT NULL, "rtype" VARCHAR, "rkey" VARCHAR, "value" VARCHAR</td>
+	</tr>
+	<tr>
+		<td>rel</td>
+		<td>relaciones</td>
+		<td>"ID" INTEGER, "rtype" VARCHAR, "idtype" VARCHAR, "ridtype" VARCHAR, "rkey" VARCHAR, "RID" INTEGER</td>
+	</tr>
+</table>
+
+<h4 class="w3-text-theme">Instrucciones básicas</h4>
+
+<p>
+	A continuación puede consultar un documento, elaborado por el Departamento de Ciencias de la Computación e 
+	Inteligencia Artificial de la Universidad de Sevilla (original 
+	<a href="https://www.cs.us.es/cursos/bd-2007/tema4.pdf" target="_blank" rel="nofollow">aquí</a>). 
+</p>
+
+<object class="margin-top-xl" style="width:100%;height:500px" type="application/pdf" 
+data="./assets/docs/es/SQL.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0">
+	<p>Este navegador no puede mostrar archivos PDF.</p>
+</object>

@@ -1,0 +1,77 @@
+a {
+	text-decoration: none;
+}
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.box {
+	background-color: #ffffff;
+	opacity: 0.4;
+	border-radius: 5px;
+	padding: 10px 8px;
+	width: 81px;
+	height: 81px;
+	text-align: center;
+}
+.box:hover {
+	opacity: 1;
+}
+.blend {
+	mix-blend-mode: difference;
+}
+#bkg0 {
+	background: url("../../images/backgrounds/white-head-bust-in-museum-2167395-min.jpg");
+	background-size: cover;
+}
+#bkg1 {
+	background: url("../../images/backgrounds/adult-architecture-art-building-277054-min.jpg");
+	background-size: cover;
+}
+#bkg2 {
+	background: url("../../images/backgrounds/art-design-gallery-group-460736-min.jpg");
+	background-size: cover;
+}
+#bkg3 {
+	background: url("../../images/backgrounds/exhibit-painting-display-69903-min.jpg");
+	background-size: cover;
+}
+#bkg4 {
+	background: url("../../images/backgrounds/exhibition-1659447-min.jpg");
+	background-size: cover;
+}
+#bkg5 {
+	background: url("../../images/backgrounds/green-and-white-walls-2328867-min.jpg");
+	background-size: cover;
+}
+#bkg6 {
+	background: url("../../images/backgrounds/istanbul-168774-min.jpg");
+	background-size: cover;
+}
+#bkg7 {
+	background: url("../../images/backgrounds/paintings-in-side-room-1839919-min.jpg");
+	background-size: cover;
+}
+#bkg8 {
+	background: url("../../images/backgrounds/paintings-inside-building-3004909-min.jpg");
+	background-size: cover;
+}
+#bkg9 {
+	background: url("../../images/backgrounds/people-walking-on-wooden-floor-inside-green-walled-building-34633-min.jpg");
+	background-size: cover;
+}
+#bkg10 {
+	background: url("../../images/backgrounds/three-paintings-hanging-in-gallery-1674049-min.jpg");
+	background-size: cover;
+}

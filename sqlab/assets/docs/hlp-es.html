@@ -1,0 +1,194 @@
+<div class="w3-row" style="margin-bottom:50px">
+	<h3 class="w3-text-dark-gray">Instrucciones</h3>
+	<p>
+		En esta página está permitido ejecutar cualquier 
+		comando SQL válido, incluyendo creación y alteración de tablas. Tenga en cuenta que NINGÚN 
+		CAMBIO SE ALMACENARÁ EN LA BASE DE DATOS CARGADA. Si desea conservar cualquier modificación 
+		realizada, deberá EXPORTAR la base de datos abierta. 
+		Si desea descargar una copia de la base de datos de Microsites PW, pulse <span class="w3-dark-gray">&nbsp;descargar&nbsp;</span>. 
+		Si no establece un máximo de filas en cada consulta, SQLab utilizará el valor mostrado en pantalla.
+	</p>
+
+	<div class="w3-panel w3-sand w3-leftbar w3-border-orange w3-padding-large w3-no-print">
+		IMPORTANTE. Generar una tabla con los resultados es un proceso que consume muchos recursos de memoria y tiempo de 
+		procesador. Esa es la razón por la que SQLab limita por defecto el número de filas a recuperar de la base de datos. 
+		No obstante, es posible ignorar dicho límite estableciendo uno propio para cada consulta. Téngalo en cuenta 
+		a la hora de escribir los comandos SQL que se van a ejecutar.
+	</div>
+	
+	<h3 class="w3-text-dark-gray">Operatoria</h3>
+	<p>
+		La secuencia normal de trabajo sería la siguiente. 
+	</p>
+	
+	<ol>
+		<li>
+			Si NO se dispone de una base de datos SQLite específica para <a target="_blank" rel="nofollow" href="../#/home">Microsites</a>: 
+			<em>Descargar</em> la base de datos actual y guardarla donde se desee. Normalmente, la base de datos se actualiza a diario.
+		</li>
+		<li>
+			Si se dispone de una base de datos SQLite específica para <a target="_blank" rel="nofollow" href="../#/home">Microsites</a>:
+			<ol>
+				<li>
+					<em>Cargar</em> la base de datos que se desee.
+				</li>
+				<li>
+					<em>Escribir el código SQL</em> en el recuadro editor.
+				</li>
+				<li>
+					<em>Ejecutar</em> el código.
+				</li>
+			</ol>
+			Si se han creado, añadido o modificado tablas, es posible <em>guardar</em> la base de datos con el nombre que se desee. 
+			Es una buena manera de disponer de una pequeña "biblioteca" que conserve las acciones realizadas.
+		</li>
+	</ol>
+	
+	<p>
+		Cuando se ejecuta un comando SQL, el resultado se presenta en forma de tabla, con un registro por fila. Dicha tabla puede ser exportada 
+		en formato <span class="w3-tooltip">TSV 
+		<span class="w3-text w3-tag" style="position:absolute;left:0;bottom:20px;width:150px">
+		(<em>archivo de texto con los campos separados por tabuladores</em>)</span>
+		</span> 
+		o impresa.
+	</p>
+	
+	<h3 class="w3-text-dark-gray">Tablas generadas</h3>
+	<p>
+		Para trabajar con las mismas condiciones que con <a target="_blank" rel="nofollow" href="../#/home">Microsites</a> es 
+		posible ejecutar las consultas que crean las tablas <em>generadas</em> <code class="w3-codespan">flt</code> y 
+		<code class="w3-codespan">lnk</code>. El cometido de esas tablas es el siguiente.
+	</p>
+	<ul>
+		<li>
+			<code class="w3-codespan"><b>flt</b></code>. Tabla de filtrado. Cualquier elemento que se incluya en un comando 
+			<code class="w3-codespan">SELECT</code> debe existir en el conjunto de dicha tabla. 
+		</li>
+		<li>
+			<code class="w3-codespan"><b>lnk</b></code>. Tabla de relaciones de segundo grado. En 
+			<a target="_blank" rel="license" href="../#/home">Microsites</a>, las relaciones entre <em>registros primarios</em> (PR) 
+			(ver <a target="_blank" rel="nofollow" href="../#/ontology">aquí</a>) se establecen según el modelo 
+			<code class="w3-codespan">PR A &rarr; acción relacional &rarr; PR B</code>, denominado 
+			<em>relaciones de primer grado</em> y que está contenido en la tabla 
+			<code class="w3-codespan">rel</code>. 
+			Pero, puesto que <code class="w3-codespan">PR B</code> también puede 
+			tener relaciones adicionales a la que le vincula con <code class="w3-codespan">PR A</code>, es posible 
+			calcular el modelo 
+			<code class="w3-codespan">PR A &rarr; acción relacional &rarr; PR B &rarr; acción relacional &rarr; PR C</code>, 
+			denominado <em>relaciones de segundo grado</em>. De esa manera, por ejemplo, es posible localizar enlaces del tipo 
+			<div class="w3-code notranslate">
+				El actor X participa en la exposición Y en calidad de comisario, en la cual también participa el actor Z en 
+				calidad de artista
+			</div>
+		</li>
+	</ul>
+	<p>
+		Los comandos SQL de las consultas que permiten crear las tablas generadas se ofrecen a continuación.
+	</p>
+
+	<h4 class="w3-text-dark-gray">Tabla <code class="w3-codespan"><b>flt</b></code></h4>
+
+	<div id="code-flt" class="w3-code sqlHigh notranslate w3-light-grey">
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS tpos;<br>
+		CREATE TABLE tpos AS <br>
+		SELECT * FROM pos p <br>
+		WHERE ###;<br>
+		COMMIT;<br>
+
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS tdrel;<br>
+
+		CREATE TABLE tdrel AS <br>
+		SELECT <br>
+		DISTINCT rel.RID AS ID <br>
+		FROM rel INNER JOIN tpos ON rel.ID = tpos.ID;<br>
+		COMMIT;<br>
+
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS tirel;<br>
+		CREATE TABLE tirel AS <br>
+		SELECT <br>
+		DISTINCT rel.ID AS ID <br>
+		FROM rel INNER JOIN tpos ON rel.RID = tpos.ID;<br>
+		COMMIT;<br>
+
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS tdext;<br>
+		CREATE TABLE tdext AS <br>
+		SELECT <br>
+		DISTINCT rel.RID AS ID <br>
+		FROM rel INNER JOIN (<br>
+		SELECT DISTINCT ID FROM(SELECT ID FROM tdrel UNION SELECT ID FROM tirel)<br>
+		) ext ON rel.ID = ext.ID;<br>
+		COMMIT;<br>
+
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS tiext;<br>
+		CREATE TABLE tiext AS <br>
+		SELECT <br>
+		DISTINCT rel.ID AS ID <br>
+		FROM rel INNER JOIN (<br>
+		SELECT DISTINCT ID FROM(SELECT ID FROM tdrel UNION SELECT ID FROM tirel)<br>
+		) ext ON rel.RID = ext.ID;<br>
+		COMMIT;<br>
+
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS flt;<br>
+		CREATE TABLE flt AS <br>
+		SELECT <br>
+		DISTINCT ID AS ID <br>
+		FROM (<br>
+		SELECT ID FROM tpos <br>
+		UNION <br>
+		SELECT ID FROM tdrel <br>
+		UNION <br>
+		SELECT ID FROM tirel <br>
+		UNION <br>
+		SELECT ID FROM tdext <br>
+		UNION <br>
+		SELECT ID FROM tiext<br>
+		);<br>
+		COMMIT;<br><br>
+		
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS tpos;<br>
+		COMMIT;<br>
+		
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS tdrel;<br>
+		COMMIT;<br>
+		
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS tirel;<br>
+		COMMIT;<br>
+		
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS tdext;<br>
+		COMMIT;<br>
+
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS tiext;<br>
+		COMMIT;<br>
+	</div>
+	
+	<h4 class="w3-text-dark-gray">Tabla <code class="w3-codespan"><b>lnk</b></code></h4>
+
+	<div id="code-lnk" class="w3-code sqlHigh notranslate w3-light-grey">
+		BEGIN TRANSACTION;<br>
+		DROP TABLE IF EXISTS lnk;<br>
+		CREATE TABLE lnk AS <br>
+		SELECT DISTINCT <br>
+		rel.ID AS origin,<br>
+		rel.rkey AS link,<br>
+		rel.RID AS target <br>
+		FROM rel <br>
+		UNION <br>
+		SELECT DISTINCT <br>
+		rel.RID AS origin,<br>
+		rel.rkey AS link,<br>
+		rel.ID AS target <br>
+		FROM rel;<br>
+		COMMIT;<br>
+	</div>
+</div>

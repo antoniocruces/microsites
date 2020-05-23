@@ -1,0 +1,64 @@
+<div class="w3-row w3-padding">
+	<div class="w3-container">
+		<h4 class="w3-text-grey">Datos</h4>
+		<h1 class="w3-text-theme">
+			Índice temático
+		</h1>
+
+		<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-padding-large w3-no-print">
+			Directorio de la base de datos organizada por unidades temáticas. 
+			Si quiere localizar un registro, seleccione la unidad temática y elija un valor. 
+			Se mostrarán todos los registros que contengan dicho valor. 
+			Si desea ayuda sobre el índice temático, 
+			<a class="help-window" id="lst-hlp" data-help="semantic" href="javascript:;">pulse aquí</a>.
+			<span id="performance-msg"></span>
+		</div>
+				
+		<div id="filter-warning" class="w3-panel w3-pale-red w3-leftbar w3-border-red w3-padding-large w3-no-print" style="display:none;">
+			No hay ninguna base de datos cargada.
+		</div>
+
+		<div id="database-result" style="display:none">
+			<div class="w3-bar w3-transparent">
+				<span class="w3-bar-item w3-transparent w3-padding-small" style="padding-left:0 !important">Leyenda</span>
+				<span class="w3-bar-item w3-2018-tofu w3-padding-small">géneros</span>
+				<span class="w3-bar-item w3-2018-almond-buff w3-padding-small">metadatos</span>
+				<span class="w3-bar-item w3-2018-meerkat w3-padding-small">lugares</span>
+				<span class="w3-bar-item w3-2018-limelight w3-padding-small">taxonomías</span>
+
+				<span class="w3-bar-item w3-safety-blue w3-padding-small"><i class="fas fa-user"></i> actor</span>
+				<span class="w3-bar-item w3-safety-purple w3-padding-small"><i class="fas fa-book"></i> catálogo</span>
+				<span class="w3-bar-item w3-safety-yellow w3-padding-small"><i class="fas fa-tools"></i> empresa</span>
+				<span class="w3-bar-item w3-safety-green w3-padding-small"><i class="fas fa-university"></i> entidad</span>
+				<span class="w3-bar-item w3-safety-red w3-padding-small"><i class="fas fa-images"></i> exposición</span>
+				<span class="w3-bar-item w3-safety-orange w3-padding-small"><i class="fas fa-palette"></i> obra de arte</span>
+			</div>
+			<div class="w3-row w3-no-print w3-padding" id="smn-selectors" style="padding-left:0 !important;padding-right:0 !important">
+				<div class="w3-col s12 l2">
+					<div class="w3-padding" style="padding-left:0 !important">
+						<div class="w3-dropdown-hover">
+							<button class="w3-button w3-theme-d1">
+								Unidades temáticas [<span id="smn-units-total">0</span>]
+							</button>
+							<div id="smn-units-list" class="w3-dropdown-content w3-bar-block w3-border" style="max-height:400px;overflow-y:auto"></div>
+						</div>
+					</div>
+				</div>
+				<div class="w3-col s12 l10" style="padding-right:0 !important">
+					<div class="w3-padding" style="padding-right:0 !important">
+						<span class="w3-right">
+							<input id="index-filter" type="search" class="w3-input" placeholder="buscar..." style="display:none;">
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="w3-row" id="smn-title"></div>
+			<div class="w3-row" id="database-listing-result"></div>
+		</div>
+
+		<div class="w3-clear nextprev w3-margin-top w3-margin-bottom">
+			<a class="w3-btn w3-left w3-theme-d1" href="./#/indexed">❮ <span class="w3-hide-small">Índice alfabético</span></a>
+			<a class="w3-btn w3-right w3-theme-d1" href="./#/search"><span class="w3-hide-small">Búsqueda</span> ❯</a>
+		</div>
+	</div>
+</div>

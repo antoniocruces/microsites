@@ -1,0 +1,151 @@
+/* Data colors */
+.w3-safety-red {color:#fff;background-color:#bd1e24}
+.w3-safety-orange {color:#fff;background-color:#e97600}
+.w3-safety-yellow {color:#fff;background-color:#f6c700}
+.w3-safety-green {color:#fff;background-color:#007256}
+.w3-safety-blue {color:#fff;background-color:#0067a7}
+.w3-safety-purple {color:#fff;background-color:#964f8e}
+
+.w3-safety-red-text {color:#bd1e24}
+.w3-safety-orange-text {color:#e97600}
+.w3-safety-yellow-text {color:#f6c700}
+.w3-safety-green-text {color:#007256}
+.w3-safety-blue-text {color:#0067a7}
+.w3-safety-purple-text {color:#964f8e}
+
+.w3-highway-brown {color:#fff;background-color:#633517}
+.w3-highway-red {color:#fff;background-color:#a6001a}
+.w3-highway-orange {color:#fff;background-color:#e06000}
+.w3-highway-schoolbus {color:#fff;background-color:#ee9600}
+.w3-highway-yellow {color:#fff;background-color:#ffab00}
+.w3-highway-green {color:#fff;background-color:#004d33}
+.w3-highway-blue {color:#fff;background-color:#00477e}
+
+.w3-highway-brown-text {color:#633517}
+.w3-highway-red-text {color:#a6001a}
+.w3-highway-orange-text {color:#e06000}
+.w3-highway-schoolbus-text {color:#ee9600}
+.w3-highway-yellow-text {color:#ffab00}
+.w3-highway-green-text {color:#004d33}
+.w3-highway-blue-text {color:#00477e}
+
+/* Data Color Scales */
+.greens .q0-9{fill:rgb(247,252,245)} 
+.greens .q1-9{fill:rgb(229,245,224)} 
+.greens .q2-9{fill:rgb(199,233,192)} 
+.greens .q3-9{fill:rgb(161,217,155)} 
+.greens .q4-9{fill:rgb(116,196,118)} 
+.greens .q5-9{fill:rgb(65,171,93)} 
+.greens .q6-9{fill:rgb(35,139,69)} 
+.greens .q7-9{fill:rgb(0,109,44)} 
+.greens .q8-9{fill:rgb(0,68,27)}
+.greensgradient{background: linear-gradient(to right, #f7fcf5 0%, #00441b 100%)}
+
+.blues .q0-9{fill:rgb(247,251,255)} 
+.blues .q1-9{fill:rgb(222,235,247)} 
+.blues .q2-9{fill:rgb(198,219,239)} 
+.blues .q3-9{fill:rgb(158,202,225)} 
+.blues .q4-9{fill:rgb(107,174,214)} 
+.blues .q5-9{fill:rgb(66,146,198)} 
+.blues .q6-9{fill:rgb(33,113,181)} 
+.blues .q7-9{fill:rgb(8,81,156)} 
+.blues .q8-9{fill:rgb(8,48,107)}
+.bluesgradient{background: linear-gradient(to right, #f7fbff 0%, #08306b 100%)}
+
+.oranges .q0-9{fill:rgb(255,245,235)} 
+.oranges .q1-9{fill:rgb(254,230,206)} 
+.oranges .q2-9{fill:rgb(253,208,162)} 
+.oranges .q3-9{fill:rgb(253,174,107)} 
+.oranges .q4-9{fill:rgb(253,141,60)} 
+.oranges .q5-9{fill:rgb(241,105,19)} 
+.oranges .q6-9{fill:rgb(217,72,1)} 
+.oranges .q7-9{fill:rgb(166,54,3)} 
+.oranges .q8-9{fill:rgb(127,39,4)}
+.orangesgradient{background: linear-gradient(to right, #fff5eb 0%, #7f2704 100%)}
+
+.purples .q0-9{fill:rgb(252,251,253)} 
+.purples .q1-9{fill:rgb(239,237,245)} 
+.purples .q2-9{fill:rgb(218,218,235)} 
+.purples .q3-9{fill:rgb(188,189,220)} 
+.purples .q4-9{fill:rgb(158,154,200)} 
+.purples .q5-9{fill:rgb(128,125,186)} 
+.purples .q6-9{fill:rgb(106,81,163)} 
+.purples .q7-9{fill:rgb(84,39,143)} 
+.purples .q8-9{fill:rgb(63,0,125)}
+.purplesgradient{background: linear-gradient(to right, #fcfbfd 0%, #3f007d 100%)}
+
+.reds .q0-9{fill:rgb(255,245,240)} 
+.reds .q1-9{fill:rgb(254,224,210)} 
+.reds .q2-9{fill:rgb(252,187,161)} 
+.reds .q3-9{fill:rgb(252,146,114)} 
+.reds .q4-9{fill:rgb(251,106,74)} 
+.reds .q5-9{fill:rgb(239,59,44)} 
+.reds .q6-9{fill:rgb(203,24,29)} 
+.reds .q7-9{fill:rgb(165,15,21)} 
+.reds .q8-9{fill:rgb(103,0,13)}
+.redsgradient{background: linear-gradient(to right, #fff5f0 0%, #67000d 100%)}
+
+.gradientsbutton{height:24px;width:48px}
+
+
+/* Customized W3 colors */
+.w3-2018-red-pear
+{color:#fff;background-color:#7F4145}
+.w3-2018-valiant-poppy
+{color:#fff;background-color:#BD3D3A}
+.w3-2018-nebulas-blue
+{color:#fff;background-color:#3F69AA}
+.w3-2018-ceylon-yellow
+{color:#000;background-color:#D5AE41}
+.w3-2018-martini-olive
+{color:#fff;background-color:#766F57}
+.w3-2018-russet-orange
+{color:#fff;background-color:#E47A2E}
+.w3-2018-crocus-petal
+{color:#000;background-color:#BE9EC9}
+.w3-2018-limelight
+{color:#000;background-color:#F1EA7F}
+.w3-2018-quetzal-green
+{color:#fff;background-color:#006E6D}
+.w3-2018-sargasso-sea
+{color:#fff;background-color:#485167}
+.w3-2018-tofu
+{color:#000;background-color:#EAE6DA}
+.w3-2018-almond-buff
+{color:#000;background-color:#D1B894}
+.w3-2018-quiet-gray,.w3-2018-quiet-grey
+{color:#000;background-color:#BCBCBE}
+.w3-2018-meerkat
+{color:#000;background-color:#95dee3}
+.w3-2018-meadowlark
+{color:#000;background-color:#ECDB54}
+.w3-2018-cherry-tomato
+{color:#fff;background-color:#E94B3C}
+.w3-2018-little-boy-blue
+{color:#000;background-color:#6F9FD8}
+.w3-2018-chili-oil
+{color:#fff;background-color:#944743}
+.w3-2018-pink-lavender
+{color:#000;background-color:#DBB1CD}
+.w3-2018-blooming-dahlia
+{color:#000;background-color:#EC9787}
+.w3-2018-arcadia
+{color:#fff;background-color:#00A591}
+.w3-2018-emperador
+{color:#fff;background-color:#6C4F3D}
+.w3-2018-ultra-violet
+{color:#fff;background-color:#6B5B95}
+.w3-2018-almost-mauve
+{color:#000;background-color:#EADEDB}
+.w3-2018-spring-crocus
+{color:#fff;background-color:#BC70A4}
+.w3-2018-lime-punch
+{color:#000;background-color:#BFD641}
+.w3-2018-sailor-blue
+{color:#fff;background-color:#2E4A62}
+.w3-2018-harbor-mist
+{color:#000;background-color:#B4B7BA}
+.w3-2018-warm-sand
+{color:#000;background-color:#C0AB8E}
+.w3-2018-coconut-milk
+{color:#000;background-color:#F0EDE5}

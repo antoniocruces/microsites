@@ -1,0 +1,83 @@
+<div class="w3-row w3-padding">
+	<div class="w3-container">
+		<h4 class="w3-text-grey">Datos</h4>
+		<h1 class="w3-text-theme">
+			Búsqueda
+		</h1>
+
+		<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-padding-large w3-no-print">
+			Escriba todo o parte del texto del título, los metadatos o las taxonomías del registro que desee mostrar. 
+			Si lo prefiere, puede acceder a él desde el <a href="./#/listing">listado</a>. 
+			<span class="w3-text-red">NO UTILICE</span> 
+			<span class="w3-tooltip w3-text-red">COMODINES<span style="position:absolute;left:0;bottom:18px;width:300px" 
+				class="w3-text w3-tag">caracteres de reemplazo usados en búsquedas</span></span>, 
+			porque, si lo hace, serán considerados como caracteres normales y, probablemente, la búsqueda 
+			fallará. Si desea ayuda específica sobre el proceso de búsqueda, 
+			<a class="help-window" id="src-hlp" data-help="search" href="javascript:;">pulse aquí</a>. 
+			<span id="performance-msg"></span>
+		</div>
+
+		<div id="search-warning" class="w3-panel w3-pale-red w3-leftbar w3-border-red w3-padding-large w3-no-print" style="display:none;">
+			No hay ninguna base de datos cargada.
+		</div>
+ 
+		<div id="search-container" class="w3-row w3-no-print" style="display:none">
+			<h3 id="filter-title" class="w3-text-theme">Selección de registro</h3>
+			<p>
+				<span id="performance-msg"></span>
+			</p>
+	
+			<div id="search" class="w3-col w3-padding s12 m7 l7" style="padding-left:0 !important">
+				<input type="text" class="w3-input src-text invalid" 
+					placeholder="Escriba el texto que desee buscar. NO UTILICE COMODINES" 
+					required pattern="[a-zA-Z0-9À-ž*^]">
+			</div>
+			<div id="search" class="w3-col w3-padding s12 m3 l3">
+				<select id="query-rowlimit" class="w3-select">
+					<option value="1">máx. 1 fila</option>
+					<option value="5">máx. 5 filas</option>
+					<option value="10">máx. 10 filas</option>
+					<option value="50">máx. 50 filas</option>
+					<option value="100">máx. 100 filas</option>
+					<option value="1000">máx. 1.000 filas</option>
+					<option value="5000">máx. 5.000 filas</option>
+				</select>
+			</div>
+			<div id="search" class="w3-col w3-padding s12 m2 l2" style="padding-right:0 !important">
+				<button id="src-button" class="w3-button w3-theme-d5 src-search disabled">
+					buscar
+				</button>
+				<button class="w3-button w3-theme-d5 src-hstback" style="display:none" onclick="window.history.back()">
+					&larr;
+				</button>
+			</div>
+		</div>	
+		
+		<div id="database-search-container"	style="display:none">
+			<div class="tabs">
+				<div class="w3-bar w3-theme w3-no-print">
+					<button class="w3-bar-item w3-button tablink tabbar w3-theme-l3" data-target="database-search-result">
+						<span class="w3-tag w3-indigo" data-target="database-search-result">1</span> Registro
+					</button>
+					<button class="w3-bar-item w3-button tablink tabbar" data-target="database-search-analysis">
+						<span class="w3-tag w3-indigo" data-target="database-search-analysis">2</span> Análisis 
+					</button>
+					<button class="w3-bar-item w3-button tablink tabbar" data-target="database-search-relations">
+						<span class="w3-tag w3-indigo" data-target="database-search-relations">3</span> Relaciones 
+					</button>
+				</div>
+
+				<div id="database-search-result" class="w3-row-padding w3-border w3-padding tab">Sin datos</div>
+				<div id="database-search-analysis" class="w3-row-padding w3-border w3-padding tab" style="display:none">Sin datos</div>
+				<div id="database-search-relations" class="w3-row-padding w3-border w3-padding tab" style="display:none">Sin datos</div>
+			</div>
+		</div>
+		
+		<div class="w3-clear nextprev w3-margin-top w3-margin-bottom">
+			<a class="w3-btn w3-left w3-theme-d1" href="./#/listing">❮ <span class="w3-hide-small">Listado</span></a>
+			<!-- Disabled by default 
+			<a class="w3-btn w3-right w3-theme-d1" href="./#/sql">SQL ❯</a>
+			-->
+		</div>
+	</div>
+</div>

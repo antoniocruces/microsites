@@ -1,0 +1,231 @@
+<div class="container" data-nav="app">
+	<div class="row row-reverse">
+		<div class="col col-lg-9">
+			<section>
+				<div class="row">
+					<div class="form-control col col-md-6 display-lg-down">
+						<label for="">Go to:</label>
+						<select class="gotolinks" onchange="window.location.href=this.value">
+							<optgroup label="Settings">
+								<option value="./#/app" selected>Requirements</option>
+								<option value="./#/rules">Rules</option>
+								<option value="./#/legends">Legends</option>
+							</optgroup>
+							<optgroup label="Data">
+								<option value="./#/load">Load</option>
+								<option value="./#/sql">SQL</option>
+								<option value="./#/filter">Filter</option>
+								<option value="./#/search">Search</option>
+								<option value="./#/listing">Listing</option>
+							</optgroup>
+							<optgroup label="Numerical analysis">
+								<option value="./#/groups">Groups</option>
+								<option value="./#/networks">Networks</option>
+								<option value="./#/paths">Paths</option>
+								<option value="./#/export">Export</option>
+							</optgroup>
+							<optgroup label="Graphic analysis">
+								<option value="./#/simplecharts">Simples</option>
+								<option value="./#/complexcharts">Complexes</option>
+								<option value="./#/graphs">Graphs</option>
+							</optgroup>
+							<optgroup label="Territorial analysis">
+								<option value="./#/thematicmaps">Thematic maps</option>
+								<option value="./#/geomaps">Geographic maps</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+				
+				<h1 class="h2">Settings</h1>
+				<p>
+					This page shows necessary requirements complieance by the browser to execute 
+					<strong>Pathwise</strong>. By functionality reasons, you are strongly encouraged 
+					to use the most up-to-date version of your browser.
+				</p>
+
+				<div id="unusability-warning"></div>
+				
+				<h2 class="h3">Connectivity</h2>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Item</th>
+							<th class="align-right">Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<span class="tooltip">
+									Data server
+									<span class="tooltip-text" id="servers-data-url"></span>
+								</span>
+							</td>
+							<td class="align-right" id="servers-data"></td>
+						</tr>
+						<tr>
+							<td>
+								<span class="tooltip">
+									Application server
+									<span class="tooltip-text" id="servers-app-url"></span>
+								</span>
+							</td>
+							<td class="align-right" id="servers-app"></td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<h2 class="h3">Remote database</h2>
+				
+				<div id="servers-database" class="progress-bar"></div>
+				
+				<p id="servers-database-legend">Calculating&hellip;</p>
+
+				<h2 class="h3">Suggested</h2>
+				
+				<ul>
+					<li>
+						8 MB or more of RAM.
+					</li>
+					<li>
+						Microprocessor equal to or later than Intel Core i3.
+					</li>
+					<li>
+						Disk size is not relevant, although it is suggested to have 250 MB free.
+					</li>
+					<li>
+						MS Windows operating system v ≥ 10, Linux with kernel v ≥ 4, macOS v ≥10.
+					</li>
+					<li>
+						Browsers: Firefox v ≥ 50, Chrome v ≥ 51 (recommended), Opera v ≥ 40.
+					</li>
+				</ul>				
+
+				<h2 class="h3">Detected</h2>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Item</th>
+							<th class="align-right">Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Browser</td>
+							<td class="align-right" id="features-browser"></td>
+						</tr>
+						<tr>
+							<td>Accept cookies</td>
+							<td class="align-right" id="features-cookies"></td>
+						</tr>
+						<tr>
+							<td>Device type</td>
+							<td class="align-right" id="features-device"></td>
+						</tr>
+						<tr>
+							<td>Accepted languages</td>
+							<td class="align-right" id="features-languages"></td>
+						</tr>
+						<tr>
+							<td>Online</td>
+							<td class="align-right" id="features-online"></td>
+						</tr>
+						<tr>
+							<td>
+								<span class="tooltip">
+									Referrer
+									<span class="tooltip-text">
+										Indicates the origin of the access to this page
+									</span>
+								</span>
+							</td>
+							<td class="align-right" id="features-referrer"></td>
+						</tr>
+						<tr>
+							<td>Screen resolution (pixels)</td>
+							<td class="align-right" id="features-screenresolution"></td>
+						</tr>
+						<tr>
+							<td>Time zone</td>
+							<td class="align-right" id="features-timezone"></td>
+						</tr>
+						<tr>
+							<td>
+								<span class="tooltip">
+									Calculated speed
+									<span class="tooltip-text">
+										Based on the execution time for 150 million operations
+									</span>
+								</span>
+							</td>
+							<td class="align-right" id="features-calculatedspeed"></td>
+						</tr>
+						<tr>
+							<td>
+								<span class="tooltip">
+									Memory usage
+									<span class="tooltip-text">
+										T = total; M = max; U = used
+									</span>
+								</span>
+							</td>
+							<td class="align-right" id="features-memory"></td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<p class="alert alert-info">
+					<img src="./assets/images/icons/info.svg" class="noticon-info" />
+					<strong>Pathmaster</strong> is not intended for use on mobile devices or tablets. 
+					Some versions of Safari, especially the first releases of the number 10, 
+					can arise troubles in downloading data from the server and issue unrealistic 
+					warnings about excessive memory consumption.
+				</p>
+
+			</section>
+			<section class="align-right">
+				Next: <a href="./#/rules" rel="next">Rules</a> &raquo;
+			</section>
+		</div>
+
+		<div class="col col-lg-3 display-lg-up">
+			<div class="sidebar sidebar-left">
+				<h3 class="sidebar-category active">Settings</h3>
+				<ul class="sidebar-links">
+					<li><a class="active" href="./#/app">Requirements</a></li>
+					<li><a href="./#/rules">Rules</a></li>
+					<li><a href="./#/legends">Legends</a></li>
+				</ul>
+				<h3 class="sidebar-category">Data</h3>
+				<ul class="sidebar-links">
+					<li><a href="./#/load">Load</a></li>
+					<li><a href="./#/sql">SQL</a></li>
+					<li><a href="./#/filter">Filter</a></li>
+					<li><a href="./#/search">Search</a></li>
+					<li><a href="./#/listing">Listing</a></li>
+				</ul>
+				<h3 class="sidebar-category">Numeric analysis</h3>
+				<ul class="sidebar-links">
+					<li><a href="./#/groups">Groups</a></li>
+					<li><a href="./#/networks">Networks</a></li>
+					<li><a href="./#/paths">Paths</a></li>
+					<li><a href="./#/export">Export</a></li>
+				</ul>
+				<h3 class="sidebar-category">Graphic analysis</h3>
+				<ul class="sidebar-links">
+					<li><a href="./#/simplecharts">Simples</a></li>
+					<li><a href="./#/complexcharts">Complexes</a></li>
+					<li><a href="./#/graphs">Graphs</a></li>
+				</ul>
+				<h3 class="sidebar-category">Territorial analysis</h3>
+				<ul class="sidebar-links">
+					<li><a href="./#/thematicmaps">Thematic maps</a></li>
+					<li><a href="./#/geomaps">Geographic maps</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

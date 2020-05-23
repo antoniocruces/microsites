@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>Microsites PW</title>
+		
+		<link rel="canonical" href="https://microsites.hdplus.es/" />
+	
+		<meta name="author" content="Antonio Cruces Rodríguez. iArtHis_LAB. Universidad de Málaga" />
+		<meta name="copyright" content="Antonio Cruces Rodríguez. iArtHis_LAB. Universidad de Málaga" />
+		<meta name="description" content="A Digital Art History KDD Tool" />
+		<meta name="keywords" content="digital art history, knowledge discovery in databases, kdd" />	
+		<meta name="robots" content="index, follow" />
+	
+		<meta property="og:locale" content="es_ES" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Microsites Pathwise" />
+		<meta property="og:description" content="A Digital Art History KDD Tool" />
+		<meta property="og:url" content="https://hdplus.es/microsites/" />
+		<meta property="og:site_name" content="Microsites Pathwise" />
+		<meta property="og:image" content="https://hdplus.es/microsites/assets/images/og/pathwise.png" />
+		<meta property="og:image:secure_url" content="https://hdplus.es/microsites/assets/images/og/pathwise.png" />
+		<meta property="og:image:width" content="600" />
+		<meta property="og:image:height" content="315" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:description" content="A Digital Art History KDD Tool" />
+		<meta name="twitter:title" content="Microsites Pathwise" />
+		<meta name="twitter:site" content="@iarthislab" />
+		<meta name="twitter:image" content="https://hdplus.es/microsites/assets/images/og/pathwise.pn" />
+		<meta name="twitter:creator" content="@iarthislab" />
+	
+		<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicons/favicon-16x16.png">
+		<link rel="manifest" href="../assets/images/favicons/site.webmanifest">
+		<link rel="mask-icon" href="../assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="../assets/images/favicons/favicon.ico">
+		
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="./assets/images/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<script type="application/ld+json">
+			{"@context":"http://www.schema.org","@type":"EducationalOrganization","name":"iArtHis_LAB Research Group","url":"https://iarthislab.es/","logo":"https://iarthislab.es/wp-content/uploads/2018/03/iarthis_logo_uma.png","image":"https://iarthislab.es/wp-content/uploads/2018/03/iarthis_logo_uma.png","description":"iArtHis_Lab is a research, innovation and training laboratory for the development of digital studies on artistic culture, and in particular for the progress and consolidation of the Digital Art History in Spain","address":{"@type":"PostalAddress","streetAddress":"Dpto. Historia del Arte Universidad de Málaga, Facultad de Filosofía y Letras, Campus de Teatinos, s/n","postOfficeBoxNumber":"29071","addressLocality":"Málaga","addressRegion":"Málaga","postalCode":"29071","addressCountry":"España"},"geo":{"@type":"GeoCoordinates","latitude":"36.7154799","longitude":"-4.4709432"},"hasMap":"https://www.google.com/maps/@36.7154799,-4.4709432,18.1z","openingHours":"Mo 09:00-20:00 Tu 09:00-20:00 We 09:00-20:00 Th 09:00-20:00 Fr 09:00-20:00"}
+		</script>
+
+		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+		<link rel="preconnect" href="//fonts.googleapis.com" />
+		
+		<link rel="stylesheet" id="w3-css" type="text/css" href="../assets/vendor/w3/w3.css">
+		<link rel="stylesheet" id="fonts" type="text/css" href="../assets/styles/app-fonts-sans-serif.css" />
+		<link rel="stylesheet" id="screen" href="./assets/styles/app-styles.css">
+		<link rel="stylesheet" id="screen" href="./assets/styles/app-print.css">
+		<link rel="stylesheet" id="codemirror" href="./assets/vendor/codemirror/codemirror.css">
+	</head
+	
+	<body class="sqlab">
+		<header class="w3-container w3-dark-gray w3-padding-0">
+			<h1 class="w3-margin-left w3-margin-right">
+				<img src="../assets/images/logos/microsites-logo.svg" width="45" height="45" alt="Logo Microsites" style="display:inline">
+				<span class="lang" data-text="title"></span>
+			</h1>
+			<div class="w3-bar w3-black w3-no-print">
+				<button class="w3-bar-item w3-button w3-gray tablink tabbar lang" data-target="sqlab-workshop" data-text="workshop"></button>
+				<button class="w3-bar-item w3-button tablink tabbar lang" data-target="sqlab-help" data-text="help"></button>
+			</div>
+		</header>
+
+		<main class="w3-container tabs">
+			<div id="sqlab-workshop" class="tab">
+				<div class="w3-row">
+					<div class="w3-col">
+						<p class="lang" data-text="intro"></p>
+						<textarea class="w3-input" id="commands"></textarea>
+						<p class="w3-small w3-no-print lang" data-text="cheatsheet"></p>
+					</div>
+				</div>
+				<div class="w3-row w3-margin-top w3-no-print">
+					<div class="w3-col">
+						<a href="../assets/static/pathwise.db" class="w3-button w3-dark-gray">
+							<span class="lang" data-text="download"></span>
+						</a>
+						<input class="w3-input" type='file' id='dbfile' style="display:none">
+						<label class="w3-button w3-black" for="dbfile">
+							<span class="lang" data-text="load"></span>
+						</label>
+						<button id="execute" class="w3-button w3-black">
+							<span class="lang" data-text="execute"></span>
+						</button>
+						<button id='savedb' class="w3-button w3-black">
+							<span class="lang" data-text="save"></span>
+						</button>
+						<label class="lang w3-margin-left w3-margin-right" data-text="limit"></label>
+						<input class="w3-radio limit" type="radio" name="limit" value="1000" checked>
+						<label class="w3-margin-right">1 000</label>
+						<input class="w3-radio limit" type="radio" name="limit" value="2500">
+						<label class="w3-margin-right">2 500</label>
+						<input class="w3-radio limit" type="radio" name="limit" value="5000">
+						<label class="w3-margin-right">5 000</label>
+						<input class="w3-radio limit" type="radio" name="limit" value="10000">
+						<label>10 000</label>
+						<pre id="error" class="w3-text-red"></pre>
+					</div>
+				</div>
+				<div class="w3-row" id="results" style="display:none">
+					<h3>
+						<span class="lang" data-text="results"></span>
+					</h3>
+					<div class="w3-col">
+						<pre id="output"></pre>
+					</div>
+				</div>
+			</div>
+			<div id="sqlab-help" class="tab" style="display:none">
+				<p>
+					PLACEHOLDER
+				</p>
+			</div>
+		</main>
+
+		<footer class="w3-container w3-dark-grey footer">
+			<h5>
+				<a href="../index.html">Microsites PW</a>
+				<span id="language" class="w3-right w3-margin-left"></span>
+				<span class="w3-right w3-margin-left" id="perf"></span>
+			</h5>
+		</footer>
+
+		<div class="siteoverlay" style="display:none;z-index:9000">
+			<div class="siteoverlaytext"><span class="loading lang" data-text="working"></span></div>
+		</div>
+
+		<div class="w3-row w3-print-only">
+			<div class="w3-col">
+				<h4 class="w3-text-theme">Generic citation / Cita genérica</h4>
+				<p>
+					Microsite SQLab. (Microsite Project, dir. Nuria Rodríguez Ortega, iArtHis / Universidad de Málaga). 
+					Available at / Disponible en <span id="printcururl"></span>.
+				</p>
+				<p id="printappdata"></p>
+				<p>
+					&copy; 2020. All rights reserved / Derechos reservados. 
+					Printed / Impreso: <span id="printcurdate"></span>
+				</p>
+				<p>
+					<img id="printqr" style="-webkit-user-select:none;margin:auto;" 
+						src="https://api.qrserver.com/v1/create-qr-code/?size=70x70&data=./">
+				</p>
+			</div>
+		</div>
+		
+		<script id="codemirror" type="text/javascript" src="./assets/vendor/codemirror/codemirror.js"></script>
+		<script id="codemirror-sql" type="text/javascript" src="./assets/vendor/codemirror/sql.js"></script>
+		<script id="codemirror-sql" type="text/javascript" src="../assets/vendor/w3/w3codecolor.js"></script>
+		<script id="app" type="text/javascript" src="./assets/scripts/app.js"></script>
+	</body>
+</html>

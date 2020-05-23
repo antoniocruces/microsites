@@ -1,0 +1,76 @@
+<div class="page-header">
+	<h2>Datos</h2>
+	<h3>
+		Búsqueda
+	</h3>
+</div>
+<article class="content">
+	<blockquote class="primary">
+		Utilice la lista para buscar el registro que desee mostrar. 
+		Si lo prefiere, puede acceder a él desde el <a href="./#/listing">listado</a>. 
+		Si tiene duda sobre el uso de 
+		<span class="tooltip">
+		comodines
+		<span class="tooltip-text">Reemplazo de uno o varios caracteres</span>
+		</span>, 
+		<a class="help-window" id="src-hlp" data-help="search" href="javascript:;">pulse aquí</a>. 
+		<span id="performance-msg"></span>
+	</blockquote>
+
+	<blockquote id="search-warning" class="error bg-error" style="display:none">
+		No hay ninguna base de datos cargada.
+	</blockquote>
+
+	<div id="search-container" style="display:none;margin-top:30px;">
+		<h3 class="h4" id="filter-title">
+			Selección de registro
+		</h3>
+		<p>
+			<span id="performance-msg"></span>
+		</p>
+
+		<div id="search" style="line-height: 3.6;margin-bottom:0">
+			<input type="text" class="src-text invalid" 
+				placeholder="Escriba el texto que desee buscar" 
+				style="display:inline;width:auto;margin-right:10px;pointer-events:auto;min-width:250px;max-width:250px;" 
+				required pattern="[a-zA-Z0-9À-ž*^]">
+			<select id="query-rowlimit" 
+				style="display:inline;width:auto;margin-right:5px;min-width:190px;max-width:190px;">
+				<option value="1">máx. 1 fila</option>
+				<option value="5">máx. 5 filas</option>
+				<option value="10">máx. 10 filas</option>
+				<option value="50">máx. 50 filas</option>
+				<option value="100">máx. 100 filas</option>
+				<option value="1000">máx. 1.000 filas</option>
+				<option value="5000">máx. 5.000 filas</option>
+			</select>
+			<button class="src-search button-primary disabled">
+				Buscar
+			</button>
+			<button class="src-hstback button-info" style="display:none" onclick="window.history.back()">
+				&larr;
+			</button>
+		</div>
+		
+		<div id="database-search-container"	style="display:none">
+			<div class="tabs">
+				<input type="radio" class="tabswitch" name="tabs" id="tabone" 
+					data-tabid="database-search-result" checked="checked">
+				<label for="tabone">FILTRO</label>
+				<div id="database-search-result" class="tab">Sin datos</div>
+				<input type="radio" class="tabswitch" name="tabs" id="tabtwo" 
+					data-tabid="database-search-analysis">
+				<label for="tabtwo">RELACIONES</label>
+				<div id="database-search-analysis" class="tab">Sin datos</div>
+			</div>
+		</div>					
+	</div>
+	<p style="padding-bottom:20px">
+		<span class="float-left">
+			&laquo; <a href="./#/filter" rel="prev">Filtro</a>: Anterior
+		</span>
+		<span class="float-right">
+			Siguiente: <a href="./#/listing" rel="next">Listado</a> &raquo;
+		</span>
+	</p>
+</article>

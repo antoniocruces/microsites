@@ -1,0 +1,230 @@
+<div class="w3-row w3-padding">
+	<div class="w3-container">
+		<h4 class="w3-text-grey">Opciones</h4>
+		<h1 class="w3-text-theme">
+			Requisitos
+		</h1>
+
+		<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-padding-large w3-no-print">
+			Esta página muestra el cumplimiento de los requisitos necesarios por parte del navegador 
+			para ejecutar <strong>Pathwise</strong>. Por razones de funcionalidad, se insta 
+			encarecidamente a utilizar la versión más actualizada de su navegador.
+		</div>
+	
+		<div id="unusability-warning" style="display:none;" class="w3-panel w3-pale-red w3-leftbar w3-border-red w3-padding-large"></div>
+
+		<div class="w3-panel w3-sand w3-leftbar w3-border-amber w3-padding-large">
+			<strong>Pathwise</strong> no está pensado para uso en dispositivos móviles o tabletas. 
+			Algunas versiones de Safari, en especial las primeras releases de la número 10, 
+			pueden plantear problemas en la descarga de datos del servidor y emitir 
+			advertencias poco realistas sobre consumo excesivo de memoria.
+		</div>
+	
+		<div id="c1"></div>
+
+		<div class="w3-row">
+			<div class="w3-col l6 m6 s12 w3-padding" style="padding-left:0 !important">
+				<h3 class="w3-text-theme">
+					Base de datos remota&nbsp;
+				</h3>
+				<div id="servers-database-warning" class="w3-panel w3-pale-red w3-leftbar w3-border-red w3-padding-large" style="display:none;">
+					Error en servidor de base de datos. Si desea más información, 
+					<a class="help-window" data-help="load" href="javascript:;">pulse aquí</a>.
+				</div>
+				<div id="servers-database" class="w3-display-container w3-border" style="height:30vh">
+					<div class="w3-display-middle spinloader">Trabajando&hellip;</div>
+				</div>
+			</div>
+			<div class="w3-col l6 m6 s12 w3-padding" style="padding-right:0 !important">
+				<h3 class="w3-text-theme">
+					Conectividad
+					<i id="connectivity-loader" class="fas fa-cog fa-spin w3-text-red we-margin-left"></i>
+				</h3>
+				<table class="w3-table w3-bordered">
+					<thead>
+						<tr>
+							<th>Elemento</th>
+							<th class="w3-right-align">Estado</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<span class="w3-tooltip">
+									Servidor de datos
+									<span id="servers-data-url" 
+										style="position:absolute;left:0;bottom:24px" class="w3-text w3-tag">...</span>
+								</span>
+							</td>
+							<td class="w3-right-align" id="servers-data"></td>
+						</tr>
+						<tr>
+							<td>
+								<span class="w3-tooltip">
+									Servidor de aplicación
+									<span id="servers-app-url" 
+										style="position:absolute;left:0;bottom:24px" class="w3-text w3-tag">...</span>
+								</span>
+							</td>
+							<td class="w3-right-align" id="servers-app"></td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="w3-center">
+					<a class="help-window w3-small" data-help="prlegend" href="javascript:;">
+						Ayuda de la leyenda
+					</a>
+				</p>
+			</div>
+		</div>
+	
+		<h3 class="w3-text-theme">Recomendado</h3>
+		
+		<ul class="w3-ul w3-hoverable">
+			<li>
+				8 MB ó más de memoria RAM.
+			</li>
+			<li>
+				Microprocesador igual o posterior a Intel Core i3.
+			</li>
+			<li>
+				El tamaño del disco no es relevante, si bien se sugiere disponer de 250 MB libres.
+			</li>
+			<li>
+				Sistema operativo MS Windows v ≥ 10, Linux con kernel v ≥ 4, macOS v ≥ 10.
+			</li>
+			<li>
+				Navegador Firefox v ≥ 50, Chrome v ≥ 51 (recomendado), Opera v ≥ 40.
+			</li>
+		</ul>				
+	
+		<h3 class="w3-text-theme">Detectado</h3>
+	
+		<table class="w3-table w3-bordered">
+			<thead>
+				<tr>
+					<th>Elemento</th>
+					<th class="w3-right-align">Estado</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<span class="w3-tooltip">
+							Dirección IP
+							<span id="servers-app-url" 
+								style="position:absolute;left:0;bottom:24px" class="w3-text w3-tag">
+								Información obtenida de https://www.geojs.io
+								</span>
+						</span>
+					</td>
+					<td class="w3-right-align" id="features-ip"></td>
+				</tr>
+				<tr>
+					<td>
+						<span class="w3-tooltip">
+							Proveedor
+							<span id="servers-app-url" 
+								style="position:absolute;left:0;bottom:24px" class="w3-text w3-tag">
+								Información obtenida de https://www.geojs.io
+								</span>
+						</span>
+					</td>
+					<td class="w3-right-align" id="features-organization"></td>
+				</tr>
+				<tr>
+					<td>
+						<span class="w3-tooltip">
+							Ubicación
+							<span id="servers-app-url" 
+								style="position:absolute;left:0;bottom:24px" class="w3-text w3-tag">
+								Información obtenida de https://www.geojs.io
+								</span>
+						</span>
+					</td>
+					<td class="w3-right-align" id="features-location"></td>
+				</tr>
+				<tr>
+					<td>
+						<span class="w3-tooltip">
+							Posición
+							<span id="servers-app-url" 
+								style="position:absolute;left:0;bottom:24px" class="w3-text w3-tag">
+								Información obtenida de https://www.geojs.io
+								</span>
+						</span>
+					</td>
+					<td class="w3-right-align" id="features-position"></td>
+				</tr>
+				<tr>
+					<td>Navegador</td>
+					<td class="w3-right-align" id="features-browser"></td>
+				</tr>
+				<tr>
+					<td>Acepta cookies</td>
+					<td class="w3-right-align" id="features-cookies"></td>
+				</tr>
+				<tr>
+					<td>Tipo de dispositivo</td>
+					<td class="w3-right-align" id="features-device"></td>
+				</tr>
+				<tr>
+					<td>Idiomas aceptados</td>
+					<td class="w3-right-align" id="features-languages"></td>
+				</tr>
+				<tr>
+					<td>Conectado</td>
+					<td class="w3-right-align" id="features-online"></td>
+				</tr>
+				<tr>
+					<td>
+						<span class="w3-tooltip">
+							Referrer
+							<span id="servers-app-url" 
+								style="position:absolute;left:0;bottom:24px;width:150px" class="w3-text w3-tag">
+								Indica la procedencia del acceso a esta página
+								</span>
+						</span>
+					</td>
+					<td class="w3-right-align" id="features-referrer"></td>
+				</tr>
+				<tr>
+					<td>Resolución de pantalla (píxeles)</td>
+					<td class="w3-right-align" id="features-screenresolution"></td>
+				</tr>
+				<tr>
+					<td>Zona horaria</td>
+					<td class="w3-right-align" id="features-timezone"></td>
+				</tr>
+				<tr>
+					<td>
+						<span class="w3-tooltip">
+							Velocidad calculada
+							<span id="servers-app-url" 
+								style="position:absolute;left:0;bottom:24px;width:150px" class="w3-text w3-tag">
+								Basada en el tiempo de ejecución de 150 millones de operaciones
+								</span>
+						</span>
+					</td>
+					<td class="w3-right-align" id="features-calculatedspeed"></td>
+				</tr>
+				<tr>
+					<td>
+						<span class="w3-tooltip">
+							Uso de memoria
+							<span id="servers-app-url" 
+								style="position:absolute;left:0;bottom:24px;width:150px" class="w3-text w3-tag">
+								T = total; M = máxima; U = en uso
+								</span>
+						</span>
+					</td>
+					<td class="w3-right-align" id="features-memory"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="w3-clear nextprev w3-margin-top w3-margin-bottom">
+			<a class="w3-btn w3-right w3-theme-d1" href="./#/legends"><span class="w3-hide-small">Leyendas</span> ❯</a>
+		</div>
+	</div>
+</div>

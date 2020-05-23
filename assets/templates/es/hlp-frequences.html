@@ -1,0 +1,203 @@
+<h3 class="w3-text-theme">Frecuencias</h3>
+
+<div class="w3-panel w3-pale-green w3-leftbar w3-border-green w3-padding-large w3-no-print">
+	Las frecuencias se calculan a partir de un grupo de metainformaciones importantes tanto para 
+	el registro que se está analizando como para aquellos que se relacionan con él. Esto permite poder establecer 
+	comparaciones y buscar pautas de comportamiento. 
+</div>
+
+<div class="w3-panel w3-sand w3-leftbar w3-border-orange w3-padding-large w3-no-print">
+	Para simplificar las búsqueda y comparar mejor las frecuencias, Microsites (MS) <em>normaliza</em> 
+	las grafías de los valores mostrados. Esto es importante, porque puede existir (incluso de forma deliberada) una 
+	forma diferente de escribir la palabra "Andalucía", por ejemplo. La normalización consiste en lo siguiente:
+	<ul>
+		<li>el valor del campo se transforma en letras minúsculas</li>
+		<li>se cambian los caracteres con tildes o diacríticos por sus homólogos</li>
+	</ul>
+	De esa forma, la palabra "Andalucía" se muestra como "andalucia". No es un error ortográfico, sino una ayuda 
+	para mejorar la precisión del proceso cuantificador.
+</div>
+
+<h4 class="w3-text-theme">Cómo calcular frecuencias</h4>
+
+<p>
+	En <em>input</em> dispuesto para ello, comience a escribir el nombre de cualquiera de los campos por los que 
+	MS puede agrupar y contar frecuencias. Microsites le mostrará una lista de los que coincidan con lo escrito.
+</p>
+
+<h4 class="w3-text-theme">Lista de campos para el cálculo de frecuencias</h4>
+
+<ul class="w3-ul">
+	<li><b>título relacionado</b> (del registro que se relaciona)</li>
+	<li><b>tipo relacionado</b> (del registro que se relaciona)</li>
+	<li>metadatos geográficos: <b>localidad</b>, <b>región</b> y <b>país</b></li>
+	<li>metadatos temporales (referidos a fecha inicial): <b>día</b>, <b>mes</b>, <b>año</b> y <b>década</b></li>
+	<li>metadatos de lapso o edad: <b>días</b>, <b>meses</b>, <b>años</b></li>
+	<li>metadatos personales: <b>género</b> declarado (solo para registros de tipo <em>actor</em>)</li>
+</ul>
+
+<p>
+	Comience a escribir el nombre de cualquiera de dichos campos. Microsites mostrará una lista de los 
+	coincidentes. Seleccione el apropiado. Pulsando sobre el símbolo <span class="tag"><span class="close-btn">✕</span></span> 
+	puede eliminar un campo de la lista. NOTA: por la forma de búsqueda, Microsites muestra aquellos campos 
+	cuya denominación tanto en inglés como en español coincide con el texto escrito; así, si se escribe 
+	<code class="w3-codespan">de</code> mostrará <code class="w3-codespan">década</code> y 
+	<code class="w3-codespan">género</code> porque el término inglés, en el 
+	segundo caso, es <em>gender</em>.
+</p>
+
+<p>
+	La lista se calculará de izquierda a derecha, y para denotar el orden se incluirá como separador 
+	de valores el símbolo <code class="w3-codespan"><b>&sub;</b></code>, que en documentación matemática y lógica formal se lee como 
+	"subconjunto de". De esa manera, una expresión como 
+	<code class="w3-codespan">localidad Y &sub; década Z</code> indica que el recuento se ha efectuado sobre los registros 
+	que están vinculados a <code class="w3-codespan">localidad Y</code> durante 
+	<code class="w3-codespan">década Z</code>, y no se han tenido 
+	en consideración aquellos que sean de décadas diferentes.
+</p>
+
+<p>
+	Cuando un tipo de metadato solicitado no sea aplicable a los registros que se relacionan con el seleccionado 
+	(por ejemplo, si se incluye el campo "género" pero el registro relacionado es una exposición) Microsites 
+	devuelve un valor nulo.
+</p>
+
+<h4 class="w3-text-theme">En qué consiste el cálculo de frecuencias</h4>
+
+<p>
+	Microsites puede calcular cuántas veces se repite el valor de un campo o un término concreto. De esa manera es posible 
+	<em>cuantificar</em> (transformar en datos numéricos) el contenido de los registros para poder realizar 
+	recuentos y operaciones predictivas o deductivas sobre ellos y así obtener información sobre patrones, 
+	repeticiones y alteraciones de pautas.
+</p>
+
+<p>
+	Es posible calcular frecuencias agrupando por hasta 4 campos en orden sucesivo. Dicho orden se lee de izquierda a 
+	derecha, y solo se utilizarán para dicho cálculo los campos cuyo valor se haya seleccionado previamente. 
+</p>
+
+<p>
+	Puede restringir el cálculo solamente a los valores considerados como <em>anomalías</em> estadísticas, es decir, 
+	que destacan por su singularidad. También puede excluir del cálculo aquellos valores que carecen de significado 
+	o <em>no son válidos</em>: nulos, vacíos, etc.
+</p>
+
+<p>
+	Como se ha señalado, los campos de valores temporales (década, año, mes, día) hacen referencia siempre a la <em>fecha inicial</em> 
+	recogida en un registro; por ejemplo, si el tipo de registro primario es <em>actor</em>, la fecha inicial 
+	será la de nacimiento.
+</p>
+
+<h4 class="w3-text-theme">Gráfico normalizado</h4>
+
+<p>
+	Con los datos seleccionados, Microsites construye un gráfico basado en una ordenación gaussiana, o 
+	distribución normal, de los resultados. Las áreas de colores diferentes se corresponden con los valores que entran en el rango de 
+	tres sigmas (3&sigma;), por encima o por debajo de hasta tres veces la desviación típica. La tabla de frecuencias 
+	muestra los colores que corresponden en cada caso.
+</p>
+
+<h4 class="w3-text-theme">Estadística descriptiva</h4>
+
+<p>
+	Microsites calcula los valores descriptivos más significativos para el cálculo de frecuencias que se realice, para 
+	mostrar la tendencia del mismo. Los valores se corresponden con la siguiente descripción.
+</p>
+
+<div class="w3-row w3-center">
+	<img src="./assets/images/illustrations/mode_median_mean.jpg" />
+	<p class="w3-center">
+		Fuente: 
+		<a href="https://codeburst.io/2-important-statistics-terms-you-need-to-know-in-data-science-skewness-and-kurtosis-388fef94eeaa" target="_blank" rel="noopener">
+			Codeburst</a>
+	</p>
+</div>
+<div class="w3-row w3-center">
+	<img src="./assets/images/illustrations/kurtosis_skewness.png" />
+	<p class="w3-center">
+		Fuente: 
+		<a href="https://deskbounded.wordpress.com/2016/03/11/chapter-6-in-kellstedt-and-whitten-2009/" target="_blank" rel="noopener">
+			DeskBounded</a>
+	</p>
+</div>
+		
+<table class="w3-table w3-bordered">
+	<tr>
+		<th>Valor</th>
+		<th>Descripción</th>
+	</tr>
+	<tr>
+		<td>cuenta</td>
+		<td>
+			número de líneas que se muestran en la tabla; es decir, número de grupos de frecuencias
+		</td>
+	</tr>
+	<tr>
+		<td>sum</td>
+		<td>
+			sumatorio de frecuencias
+		</td>
+	</tr>
+	<tr>
+		<td>anomalías</td>
+		<td>
+			número de registros con un recuento anómalo (<em>outliers</em>)
+		</td>
+	</tr>
+	<tr>
+		<td>q1/q3</td>
+		<td>
+			límites del primer y el tercer cuartil; q1 = 25% de los datos es menor que 
+			o igual a este valor; q3 = 75% de los datos es menor que o igual a este valor
+		</td>
+	</tr>
+	<tr>
+		<td>media</td>
+		<td>
+			sum / cuenta
+		</td>
+	</tr>
+	<tr>
+		<td>mediana</td>
+		<td>
+			valor de la variable de posición central en un conjunto de datos ordenados
+		</td>
+	</tr>
+	<tr>
+		<td>moda</td>
+		<td>
+			valor(es) más repetido(s) o con mayor(es) frecuencia(s)
+		</td>
+	</tr>
+	<tr>
+		<td>desviación típica</td>
+		<td>
+			 baja = la mayor parte de los datos agrupados cerca de la media; 
+			 alta = los datos se extienden sobre un rango de valores más amplio
+		</td>
+	</tr>
+	<tr>
+		<td>error típico</td>
+		<td>
+			 desviación típica / raíz cuadrada cuenta
+		</td>
+	</tr>
+	<tr>
+		<td>entropía / homogeneidad</td>
+		<td>
+			 tendencia a la dispersión de los datos
+		</td>
+	</tr>
+	<tr>
+		<td>curtosis / asimetría</td>
+		<td>
+			 ver imágenes más arriba
+		</td>
+	</tr>
+	<tr>
+		<td>anomalías / válidos</td>
+		<td>
+			 porcentaje de presencia de ambos valores
+		</td>
+	</tr>
+</table>

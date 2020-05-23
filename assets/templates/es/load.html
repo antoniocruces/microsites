@@ -1,0 +1,56 @@
+<div class="w3-row w3-padding">
+	<div class="w3-container">
+		<h4 class="w3-text-grey">Datos</h4>
+		<h1 class="w3-text-theme">
+			Carga
+		</h1>
+
+		<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-padding-large">
+			Microsites utiliza un archivo de base de datos en formato   
+			<a rel="noopener" href="https://www.sqlite.org/index.html" target="_blank">SQLite v3</a>, 
+			con una estructura específica, generado por 
+			<a href="http://expofinder.uma.es" target="_blank">ExpoFinder</a>. 
+			Se carga en memoria <em>solamente una vez durante cada sesión de trabajo</em>. Si se selecciona una colección 
+			distinta, Microsites construirá un nuevo subconjunto de registros. 
+			No se volverá a cargar la base de datos, pero se realizará un nuevo recuento.
+			Si desea ayuda sobre el proceso de carga y recuento, 
+			<a class="help-window" data-help="load" href="javascript:;">pulse aquí</a>. 
+			<span id="performance-msg"></span> 
+		</div>
+	
+		<p id="download-notification" class="w3-text-grey">
+			<span class="meterloading" id="file-msg"></span>
+			<span id="file-loading-spin" style="margin-left:20px;width:16px;"></span>
+			<span id="file-loading" style="margin-left:20px;width:16px;"></span>
+		</p>
+
+		<div class="tabs">
+			<div class="w3-bar w3-theme">
+				<button class="w3-bar-item w3-button tablink tabbar" data-target="database-listing-result">
+					<span class="w3-tag w3-indigo" data-target="database-listing-result">1</span> Carga y recuento
+				</button>
+				<button class="w3-bar-item w3-button tablink tabbar" data-target="database-load-analysis">
+					<span class="w3-tag w3-indigo" data-target="database-search-analysis">2</span> Análisis 
+				</button>
+				<button class="w3-bar-item w3-button tablink tabbar" data-target="database-load-structure-wrapper">
+					<span class="w3-tag w3-indigo" data-target="database-search-structure-wrapper">3</span> Estructura 
+				</button>
+			</div>
+			<div id="database-listing-result" class="w3-row-padding w3-border w3-padding tab">
+				Trabajando... 
+				<span id="fileread-message"></span>
+			</div>
+			<div id="database-load-analysis" class="w3-row-padding w3-border w3-padding tab" style="display:none">Sin datos</div>
+			<div id="database-load-structure-wrapper" class="w3-row-padding w3-border w3-padding tab" style="display:none">
+				<p>
+					<a class="help-window" data-help="load-legend" href="javascript:;">Leyenda</a>.
+				</p>
+				<div id="database-load-structure">Sin datos</div>
+			</div>
+		</div>
+		
+		<div class="w3-clear nextprev w3-margin-top w3-margin-bottom">
+			<a class="w3-btn w3-right w3-theme-d1" href="./#/listing"><span class="w3-hide-small">Listado</span> ❯</a>
+		</div>
+	</div>
+</div>

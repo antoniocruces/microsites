@@ -1,0 +1,133 @@
+<div id="top-bar" class="w3-top">
+	<div class="w3-bar w3-theme">
+		<a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" 
+			href="javascript:void(0);" id="open-nav">
+			<i class="fa fa-bars"></i>
+		</a>
+		<a href="./#/" class="w3-bar-item w3-button w3-theme-l1 nav-logo">
+			<img src="./assets/images/logos/microsites-logo.svg" 
+				class="w3-margin-right" 
+				width="20" height="20" alt="Logo Pathwise" />
+			Microsites
+		</a>
+
+		<div class="w3-dropdown-hover">
+			<button id="blk-menu" class="w3-button no-outline">
+				<i class="fa fa-bars icon-padding-right"></i>
+				<span class="w3-hide-small">Menú</span>
+			</button>
+			<div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index:10 !important">
+				<a href="./#/help" class="w3-bar-item w3-button">Ayuda</a>
+				<a href="./#/documents" class="w3-bar-item w3-button">Documentos</a>
+				<a href="./#/data" class="w3-bar-item w3-button">Datos</a>
+				<a href="./sqlab" target="_blank" rel="nofollow" class="w3-bar-item w3-button w3-text-theme">SQLab</a>
+			</div>
+		</div>
+		
+		<div class="w3-dropdown-hover">
+			<button id="flt-badge" class="w3-button no-outline"></button>
+			<div class="w3-dropdown-content w3-bar-block w3-card-4">
+				<input id="global-search" class="w3-bar-item w3-border-bottom" type="search" placeholder="buscar..." style="display:none">
+				<a href="javascript:;" class="w3-bar-item w3-button w3-border-bottom collection" data-collection="c">ArtCatalogs</a>
+				<a href="javascript:;" class="w3-bar-item w3-button w3-border-bottom collection" data-collection="g">Galleries</a>
+				<a href="javascript:;" class="w3-bar-item w3-button w3-border-bottom collection" data-collection="x">Andalex</a>
+				<a href="javascript:;" class="w3-bar-item w3-button collection" data-collection="p">PW Database</a>
+			</div>
+		</div>
+		
+		<div class="w3-dropdown-hover w3-right">
+			<button class="w3-button no-outline">
+				<i class="fa fa-cog icon-padding-right w3-hide-large w3-hide-medium"></i>
+				<span id="blk-options" class="w3-hide-small">Opciones</span>
+			</button>
+			<div class="w3-dropdown-content w3-bar-block w3-card-4" style="right:0">
+				<a href="javascript:;" class="w3-bar-item w3-button w3-border-bottom lang-selector">
+					<img src="./assets/images/icons/settings.svg" class="lang-icon float-right" style="margin-top:5px">
+					XXX
+				</a>
+				<span href="javascript:;" class="w3-bar-item">
+					Estilo<br/>
+					<a href="javascript:;" class="styler w3-button w3-tiny w3-blue-grey" data-style="blue-grey">&nbsp;</a>
+					<a href="javascript:;" class="styler w3-button w3-tiny w3-teal" data-style="teal">&nbsp;</a>
+					<a href="javascript:;" class="styler w3-button w3-tiny w3-khaki" data-style="khaki">&nbsp;</a>
+					<a href="javascript:;" class="styler w3-button w3-tiny w3-blue" data-style="blue">&nbsp;</a>
+					<a href="javascript:;" class="styler w3-button w3-tiny w3-purple" data-style="purple">&nbsp;</a>
+					<a href="javascript:;" class="styler w3-button w3-tiny w3-green" data-style="green">&nbsp;</a>
+					<a href="javascript:;" class="styler w3-button w3-tiny w3-orange" data-style="orange">&nbsp;</a>
+				</span>
+				<span href="javascript:;" class="w3-bar-item">
+					Tipografía<br/>
+					<a href="javascript:;" class="typer w3-button w3-black" data-typo="sans-serif" 
+						style="font-family:'IBM Plex Sans', sans-serif">
+						Aa
+					</a>
+					<a href="javascript:;" class="typer w3-button w3-black" data-typo="sans-condensed" 
+						style="font-family:'IBM Plex Sans Condensed', sans-serif">
+						Aa
+					</a>
+					<a href="javascript:;" class="typer w3-button w3-black" data-typo="serif" 
+						style="font-family:'IBM Plex Serif', serif">
+						Aa
+					</a>
+				</span>
+				<span href="javascript:;" class="w3-bar-item">
+					Escalas<br/>
+					<a href="javascript:;" class="scaler w3-button w3-tiny greensgradient gradientsbutton" data-scale="greens">&nbsp;</a>
+					<a href="javascript:;" class="scaler w3-button w3-tiny bluesgradient gradientsbutton" data-scale="blues">&nbsp;</a>
+					<a href="javascript:;" class="scaler w3-button w3-tiny purplesgradient gradientsbutton" data-scale="purples">&nbsp;</a>
+					<a href="javascript:;" class="scaler w3-button w3-tiny redsgradient gradientsbutton" data-scale="reds">&nbsp;</a>
+				</span>
+				<a href="javascript:;" class="w3-bar-item w3-button w3-border-bottom reset-options">Valores por defecto</a>
+				<a href="./#/app" class="w3-bar-item w3-button w3-border-bottom">Requisitos</a>
+				<a href="./#/legends" class="w3-bar-item w3-button">Leyendas</a>
+			</div>
+		</div>
+	</div>
+</div>
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5" id="app-sidebar" style="display:none">
+	<a href="javascript:void(0)" id="close-nav" 
+		class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Cerrar contenidos">
+		&larr;
+	</a>
+
+	<div id="nav-options-home" style="display:none;">
+		<h4 class="w3-bar-item"><b>Presentación</b></h4>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-home" href="./#/">Qué es Microsites 
+			<span class="w3-tag" id="scollection">X</span></a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-pathwise" href="./#/pathwise">Qué es Pathwise</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-howtocite" href="./#/howtocite">Cómo citar</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-legal" href="./#/legal">Información legal</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-licenses" href="./#/licenses">Licencias</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-development" href="./#/development">Desarrollo</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-contact" href="./#/contact">Contacto</a>
+	</div>
+	<div id="nav-options-help" style="display:none;">
+		<h4 class="w3-bar-item"><b>Ayuda</b></h4>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-faq" href="./#/faq">Preguntas frecuentes</a>
+	</div>
+	<div id="nav-options-documents" style="display:none;">
+		<h4 class="w3-bar-item"><b>Documentos</b></h4>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-purpose" href="./#/purpose">Propósito</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-projects" href="./#/projects">Proyectos</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-institutions" href="./#/institutions">Instituciones</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-resources" href="./#/resources">Equipo de trabajo</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-ontology" href="./#/ontology">Ontología</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-manual" href="./#/manual">Manual</a>
+	</div>
+	<div id="nav-options-data" style="display:none;">
+		<h4 class="w3-bar-item"><b>Datos</b></h4>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-load" href="./#/load">Carga</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-indexed" href="./#/indexed">Índice alfabético</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-semantic" href="./#/semantic">Índice temático</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-listing" href="./#/listing">Listado</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-search" href="./#/search">Búsqueda</a>
+		<!-- Disabled by default
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-sql" href="./#/sql">SQL</a>
+		-->
+	</div>
+	<div id="nav-options-options" style="display:none;">
+		<h4 class="w3-bar-item"><b>Opciones</b></h4>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-app" href="./#/app">Requisitos</a>
+		<a class="w3-bar-item w3-button w3-hover-black nav-links" id="nav-legends" href="./#/legends">Leyendas</a>
+	</div>
+</nav>

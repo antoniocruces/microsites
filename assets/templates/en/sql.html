@@ -1,0 +1,127 @@
+<div class="container" data-nav="app">
+	<div class="row row-reverse">
+		<div class="col col-lg-9">
+			<section>
+				<div class="row">
+					<div class="form-control col col-md-6 display-lg-down">
+						<label for="">Go to:</label>
+						<select class="gotolinks" onchange="window.location.href=this.value">
+							<optgroup label="Settings">
+								<option value="./#/app">Requirements</option>
+								<option value="./#/rules">Rules</option>
+								<option value="./#/legends">Legends</option>
+							</optgroup>
+							<optgroup label="Data">
+								<option value="./#/load">Load</option>
+								<option value="./#/sql" selected>SQL</option>
+								<option value="./#/filter">Filter</option>
+								<option value="./#/search">Search</option>
+								<option value="./#/listing">Listing</option>
+							</optgroup>
+							<optgroup label="Numerical analysis">
+								<option value="./#/groups">Groups</option>
+								<option value="./#/networks">Networks</option>
+								<option value="./#/paths">Paths</option>
+								<option value="./#/export">Export</option>
+							</optgroup>
+							<optgroup label="Graphic analysis">
+								<option value="./#/simplecharts">Simples</option>
+								<option value="./#/complexcharts">Complexes</option>
+								<option value="./#/graphs">Graphs</option>
+							</optgroup>
+							<optgroup label="Territorial analysis">
+								<option value="./#/thematicmaps">Thematic maps</option>
+								<option value="./#/geomaps">Geographic maps</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+				
+				<h1 class="h2">SQL</h1>
+				
+				<p class="alert alert-info">
+					<img src="./assets/images/icons/database.svg" height="24" width="24">
+					<strong>Pathwise</strong> uses 
+					<span class="tooltip">SQL
+						<span class="tooltip-text">SQL = Structured Query Language</span>
+					</span>.js code library, written by 
+					<span class="tooltip">kripken
+						<span class="tooltip-text">
+							Pen name of Alon Zakai, a former Google and Mozilla software engineer 
+						</span>
+					</span> with 
+					<span class="tooltip">WASM
+						<span class="tooltip-text">
+							WASM = Web Assembly
+						</span>
+					</span>
+					</a> technology, using a subset of ANSI/SQL rules. Appliying them  
+					you can build as queries as you want. Results are exportables.
+				</p>
+				<p class="alert alert-gray">
+					<strong>Links</strong>: 
+					<a rel="nofollow" href="https://github.com/kripken/sql.js/" target="_blank">SQL.js</a>, 
+					<a rel="nofollow" href="https://kripken.github.io/blog/about/" target="_blank">Alon Zakai</a>, 
+					<a rel="nofollow" href="https://webassembly.org/" target="_blank">WASM</a>, 
+					<a rel="nofollow" href="https://en.wikipedia.org/wiki/SQL" target="_blank">ANSI/SQL</a>.
+				</p>
+				
+				<h2 class="h3">Commands</h2>
+				<div class="form-control">
+					<label>Enter valid SQL commands. Separate successive queries with ;</label>
+					<textarea id="commands-editor" rows="5" placeholder="Enter valid SQL commands here"></textarea>
+					<p id="performance-msg" class="validation-error"></p>
+				</div>
+				<p>
+					<button class="button-primary button-small" id="execute-trigger">Execute</button>
+				</p>		
+				<div id="database-result" style="display:none">
+					<h2 class="h3">Result</h2>
+					<p id="database-result-msg" class="alert alert-success alert-border"></p>
+					<div id="database-listing-result"></div>
+				</div>
+			</section>
+			
+			<section class="align-right">
+				Next: <a href="./#/filter" rel="next">Filter</a> &raquo;
+			</section>
+		</div>
+
+		<div class="col col-lg-3 display-lg-up">
+			<div class="sidebar sidebar-left">
+				<h3 class="sidebar-category">Settings</h3>
+				<ul class="sidebar-links">
+					<li><a href="./#/app">Requirements</a></li>
+					<li><a href="./#/rules">Rules</a></li>
+					<li><a href="./#/legends">Legends</a></li>
+				</ul>
+				<h3 class="sidebar-category active">Data</h3>
+				<ul class="sidebar-links">
+					<li><a href="./#/load">Load</a></li>
+					<li><a class="active" href="./#/sql">SQL</a></li>
+					<li><a href="./#/filter">Filter</a></li>
+					<li><a href="./#/search">Search</a></li>
+					<li><a href="./#/listing">Listing</a></li>
+				</ul>
+				<h3 class="sidebar-category">Numeric analysis</h3>
+				<ul class="sidebar-links">
+					<li><a href="./#/groups">Groups</a></li>
+					<li><a href="./#/networks">Networks</a></li>
+					<li><a href="./#/paths">Paths</a></li>
+					<li><a href="./#/export">Export</a></li>
+				</ul>
+				<h3 class="sidebar-category">Graphic analysis</h3>
+				<ul class="sidebar-links">
+					<li><a href="./#/simplecharts">Simples</a></li>
+					<li><a href="./#/complexcharts">Complexes</a></li>
+					<li><a href="./#/graphs">Graphs</a></li>
+				</ul>
+				<h3 class="sidebar-category">Territorial analysis</h3>
+				<ul class="sidebar-links">
+					<li><a href="./#/thematicmaps">Thematic maps</a></li>
+					<li><a href="./#/geomaps">Geographic maps</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

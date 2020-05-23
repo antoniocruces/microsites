@@ -1,0 +1,62 @@
+{
+	"series":[
+		{
+			"type": "ForceDirectedSeries",
+			"fontSize":10,
+			"manyBodyStrength":-20,
+			"minRadius":"2%",
+			"dataFields":{
+				"name":"name",
+				"value":"value",
+				"children":"children",
+				"fixed":"fixed",
+				"color":"color"
+			},
+			"nodes":{
+				"template":{
+					"tooltipText":"{name}: [bold]{value}[/]",
+					"fillOpacity":1,
+					"label":{
+						"text":"{name}",
+						"hideOversized":true,
+						"truncate":true
+					},
+					"events":{
+						"over":{},
+						"out":{}
+					},
+					"adapter":{
+						"fill":{}
+					}
+				},
+				"outerCircle":{
+					"filters":[
+						{
+							"type": "DropShadowFilter"
+						}
+					]
+				}
+			},
+			"links":{
+				"template":{
+					"strokeWidth":1,
+					"states":{
+						"hover":{
+							"properties":{
+								"strokeWidth":3,
+								"strokeOpacity":1
+							}
+						}
+					}
+				}
+			}
+ 		}
+ 	],
+	"legend":{},
+	"responsive":{
+		"enabled":true
+	},
+	"exporting":{
+		"menu":{}
+	}
+}

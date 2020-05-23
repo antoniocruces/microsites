@@ -1,0 +1,59 @@
+<div class="w3-row w3-padding">
+	<div class="w3-container">
+		<h4 class="w3-text-grey">Datos</h4>
+		<h1 class="w3-text-theme">
+			Listado
+		</h1>
+
+		<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-padding-large w3-no-print">
+			El listado se construye con los registros primarios cuya ID ha sido 
+			seleccionada según la colección activa. Si desea ayuda sobre el listado, 
+			<a class="help-window" id="lst-hlp" data-help="listing" href="javascript:;">pulse aquí</a>.
+			<span id="performance-msg"></span>
+		</div>
+				
+		<div id="filter-warning" class="w3-panel w3-pale-red w3-leftbar w3-border-red w3-padding-large w3-no-print" style="display:none;">
+			No hay ninguna base de datos cargada.
+		</div>
+
+		<div id="database-result" style="display:none">
+			<div class="w3-row w3-no-print">
+				<div class="w3-col s12 m8 l8" style="padding-left:0;padding-top:8px;">
+					Incluir:&nbsp;&nbsp;
+					<input type="checkbox" class="w3-check lst-features" id="lst-features-gender" data-feature="gender">
+					<label for="lst-features-gender">
+						género
+					</label>
+					
+					<input type="checkbox" class="w3-check lst-features" id="lst-features-date" data-feature="date">
+					<label for="lst-features-date">
+						fecha
+					</label>
+		
+					<input type="checkbox" class="w3-check lst-features" id="lst-features-place" data-feature="place">
+					<label for="lst-features-place">
+						lugar
+					</label>
+					
+					<input type="checkbox" class="w3-check lst-features" id="lst-features-taxonomies" data-feature="taxonomies">
+					<label for="lst-features-taxonomies">
+						taxonomías
+					</label>
+				</div>
+				<div class="w3-col s12 m2 l2" style="padding-top:8px">
+					<input id="tablesearch" class="w3-input table-search" type="text" placeholder="buscar...">
+				</div>
+				<div class="w3-col s12 m2 l2 w3-right-align" style="padding-top:8px;padding-right:0">
+					<button class="w3-button w3-theme-d5" id="tablesearch-trigger">buscar</button>
+					<button class="w3-button w3-theme-d5" id="tablesearch-reset">reiniciar</button>
+				</div>
+			</div>
+			<div class="w3-row" id="database-listing-result"></div>
+		</div>
+
+		<div class="w3-clear nextprev w3-margin-top w3-margin-bottom">
+			<a class="w3-btn w3-left w3-theme-d1" href="./#/semantic">❮ <span class="w3-hide-small">Índice temático</span></a>
+			<a class="w3-btn w3-right w3-theme-d1" href="./#/search"><span class="w3-hide-small">Búsqueda</span> ❯</a>
+		</div>
+	</div>
+</div>
