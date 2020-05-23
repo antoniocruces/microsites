@@ -1,5 +1,5 @@
 import Utils from './Utils.js'
-import Database from './Database.js'
+//import Database from './Database.js'
 
 const providers = { 
 	osmstandard: {

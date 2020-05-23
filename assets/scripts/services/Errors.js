@@ -8,7 +8,7 @@ const Errors = () => {
 		fn: function (msg, url, lineNo, columnNo, error) {
 			let string = msg instanceof ErrorEvent ? msg.message.toLowerCase() : msg.toLowerCase();
 			let substring = 'script error';
-			let message = string.indexOf(substring) > -1 ? Utils.c('script error; see console').uf() : '';
+			let message; // = string.indexOf(substring) > -1 ? Utils.c('script error; see console').uf() : '';
 			let cleanmsg = txt => {
 				txt = txt.replace('uncaught error: ', '');
 				txt = txt.replace('unhandled rejection: ', '');

@@ -54,7 +54,7 @@ const Helpers = {
 		let calculationResult = 0;
 		let fraction = 0;
 	
-		if(!values) {
+		if(values === undefined) {
 			throw new Error(Utils.c('internal error'));
 		}
 		const valuesSum = values.reduce((sum, curr) => sum + curr, 0);
@@ -72,9 +72,9 @@ const Helpers = {
 		// Values in format {fraction: 2/3, entropyTuple: [1, 2, 3]}
 		let calculationResult = 0;
 	
-		if (values === undefined) {
-			throw new Error(Utils.c('internal error'));
-		}
+		//if (values === undefined) {
+		//	throw new Error(Utils.c('internal error'));
+		//}
 	
 		for(let v of values) {
 			let {

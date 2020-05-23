@@ -38,11 +38,11 @@ let Listing = {
 				Utils.byId('filter-warning').style.display = 'none';
 				setuplisting();
 			}
-			
+			/*
 			function normalizequery(text) {
 				return text.toLowerCase().replace(/[áéíóúàèìòùäëïöüâêîôûç]/gi, '_');
 			}
-			
+			*/
 			function setuplisting() {
 				if(G.db) {
 					Utils.byId('database-listing-result').style.display = 'block';
@@ -315,7 +315,7 @@ let Listing = {
 					return;
 				}
 
-				let rows = G.dbfilteredlength ? (G.dbfilteredlength || 0) : (G.dbposlength || 0);
+				let rows = G.dbfilteredlength ? G.dbfilteredlength : (G.dbposlength || 0);
 				for(let i = 0; i < results.length; i++) {
 					let title = Utils.c(query.name).uf();
 					outputElm.appendChild(Database.tablecreate(
@@ -399,7 +399,7 @@ let Listing = {
 					});
 				});
 			}
-
+			/*
 			function loadingmessage() {
 				if(Utils.byId('database-listing-result')) {
 					Utils.msg(
@@ -408,7 +408,7 @@ let Listing = {
 					);
 				}
 			}
-			
+			*/
 			// Listeners helper functions
 			function includefeatures(e) {
 				let type = e.target.dataset.feature;

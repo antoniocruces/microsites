@@ -1,6 +1,6 @@
 import Utils from './Utils.js'
 import Pagination from './Pagination.js'
-import Queries from './Queries.js'
+//import Queries from './Queries.js'
 
 const Database = { 
 	isdbloaded: () => !!G.db,
@@ -196,7 +196,7 @@ const Database = {
 		return div;
 	},
 	listcreate: (fid, values, sclass = '', isul = false) => {
-		function valconcat(vals, tag, fid) {
+		function valconcat(vals, tag) {
 			if (vals.length === 0) return '';
 			return vals.map(o => [
 				`<${tag} class="${sclass}"`,
@@ -263,7 +263,7 @@ const Database = {
 			].join('');
 			let rating = (o[7] + o[8]) / 4;
 			let ratingpercent = (rating * 100).toFixed(2);
-			let ratingstars = Math.round(rating * 5, 0);
+			let ratingstars = Math.round(rating * 5);
 			let ratinglabel = [
 				`<small class="w3-text-green">`,
 				`${'&#9733;'.repeat(ratingstars)}`,
@@ -593,7 +593,7 @@ const Database = {
 		let nid = null;
 		let color = null;
 		let background = null;
-		let mapcolor = null;
+		//let mapcolor = null;
 		let icon = null;
 		let title = null;
 		let type = null;
@@ -605,8 +605,8 @@ const Database = {
 					type = result.values[0][1];
 					title = result.values[0][2];
 					color = `${G.primaryrecords[type].color}-text`;
-					background = G.primaryrecords[type].background;
-					mapcolor = Utils.getcolorfromcss(`.${color}`, 'color');
+					//background = G.primaryrecords[type].background;
+					//mapcolor = Utils.getcolorfromcss(`.${color}`, 'color');
 					icon = G.primaryrecords[type].icon;
 					out.push([
 						`<h4 class="${color}" style="padding-left:0">`,
@@ -951,9 +951,9 @@ const Database = {
 		Database.exportcsv(Utils.byId(target))
 	}, 
 	rowsperpagelist: event => {
-		let url = event.target.dataset.url === '' ? null : event.target.dataset.url;
-		let sort = event.target.dataset.sort === '' ? null : event.target.dataset.sort;
-		let currentpage = event.target.dataset.currentpage === '' ? null : event.target.dataset.currentpage;
+		//let url = event.target.dataset.url === '' ? null : event.target.dataset.url;
+		//let sort = event.target.dataset.sort === '' ? null : event.target.dataset.sort;
+		//let currentpage = event.target.dataset.currentpage === '' ? null : event.target.dataset.currentpage;
 		let query = event.target.dataset.query === '' ? null : event.target.dataset.query;
 		
 		let div = document.createElement('div');

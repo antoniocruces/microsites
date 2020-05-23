@@ -370,6 +370,7 @@ const Stats = {
 	relations: (nid, relations) => {
 		if(!nid || !relations) return;
 		let out = [];
+		/*
 		function calculate_relations(e) {
 			Charts.forcedirected(
 				`${nid}`, 
@@ -377,6 +378,7 @@ const Stats = {
 				Utils.c('force directed')
 			);
 		}
+		*/
 		out.push([
 			`<h4 class="w3-text-theme">`,
 			Utils.c('relations').uf(),

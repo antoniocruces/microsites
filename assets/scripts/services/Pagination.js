@@ -1,4 +1,4 @@
-import Utils from './Utils.js'
+//import Utils from './Utils.js'
 
 const Pagination = (function() {
     let self = {};

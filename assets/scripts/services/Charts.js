@@ -1,6 +1,6 @@
 import Utils from './Utils.js'
-import Database from './Database.js'
-import Queries from './Queries.js'
+//import Database from './Database.js'
+//import Queries from './Queries.js'
 
 import '../../vendor/anychart/js/anychart-custom-build.min.js'
 
@@ -35,10 +35,10 @@ const Charts = {
 		});
 	},
 	singlepointmap: e => {
-		let type = e.target.dataset.type || 'plain';
+		//let type = e.target.dataset.type || 'plain';
 		let point = e.target.dataset.coordinates || '0,0,0';
-		let lat = parseFloat(point.split(',')[0]);
-		let lon = parseFloat(point.split(',')[1]);
+		//let lat = parseFloat(point.split(',')[0]);
+		//let lon = parseFloat(point.split(',')[1]);
 		let cid = e.target.dataset.cid;
 		let title = e.target.dataset.title || Utils.c('n/a');
 		let text = e.target.dataset.text || e.target.dataset.title;
@@ -112,7 +112,7 @@ const Charts = {
 				map.container(cid);
 				map.draw();
 							
-				type = point = lat = lon = cid = title = shorttext = undefined;
+				point = cid = title = shorttext = undefined;
 				titleElm = outputElm = wrapper = div = data = mapseries = map = zoomController = undefined;
 			});
 		});

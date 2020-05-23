@@ -41,8 +41,8 @@ let Semantic = {
 			
 			function setuplisting() {
 				if(G.db) {
-					let item = parseInt(decodeURI(request.id || G.appactivesemantic.item), 10);
-					let value = decodeURI(request.verb || G.appactivesemantic.value);
+					//let item = parseInt(decodeURI(request.id || G.appactivesemantic.item), 10);
+					//let value = decodeURI(request.verb || G.appactivesemantic.value);
 					let query = (Queries.find(o => o.name === 'semantic index') || {definition: {es: [], en: []}}).definition[Utils.l];
 					let options = query.map((o, i) => ({index: i, text: o.text, color: o.color, type: o.type}));
 					Utils.byId('smn-units-list').innerHTML = '';
@@ -67,7 +67,7 @@ let Semantic = {
 						if(O) Utils.overlay();
 					}
 					
-					item = value = query = options = undefined;
+					query = options = undefined;
 				} else {
 					if(O) Utils.overlay();
 					Utils.byId('database-result').style.display = 'none';
@@ -75,7 +75,7 @@ let Semantic = {
 			}
 				
 			function showlisting(qid) {
-				if(!qid || qid === undefined) return;
+				if(!qid) return;
 				let query = (Queries.find(o => o.name === 'semantic index') || {definition: {es: [], en: []}}).definition[Utils.l];
 				qid = parseInt(qid, 10);
 				if(isNaN(qid)) return;

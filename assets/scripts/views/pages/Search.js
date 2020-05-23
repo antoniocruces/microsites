@@ -4,7 +4,7 @@ let Database;
 let Queries;
 let Charts;
 let Stats;
-let Helpers;
+//let Helpers;
 let Maps;
 
 let Search = {
@@ -20,16 +20,16 @@ let Search = {
 		Promise.all([
 			import('../../services/Database.js'),
 			import('../../services/Queries.js'),
-			import('../../services/Charts.js'),
+			import('../../services/Charts.js'), 
 			import('../../services/Stats.js'),
-			import('../../services/StatsHelpers.js'),
+			/* import('../../services/StatsHelpers.js'), */
 			import('../../services/Maps.js'),
 		]).then(function(modules) {
 			Database = modules.shift().default;
 			Queries = modules.shift().default;
 			Charts = modules.shift().default;
 			Stats = modules.shift().default;
-			Helpers = modules.shift().default;
+			//Helpers = modules.shift().default;
 			Maps = modules.shift().default;
 			if(!O) Utils.overlay();
 			Utils.sleep().then(() => {
@@ -44,7 +44,7 @@ let Search = {
 			let outputAnl = Utils.byId('database-search-analysis');
 			let outputElm = Utils.byId('database-search-result');
 			let outputRls = Utils.byId('database-search-relations');
-			let execute = Utils.byId('src-calculate');
+			//let execute = Utils.byId('src-calculate');
 			
 			if(Utils.byId('search-warning')) Utils.byId('search-warning').style.display = G.db === null ? 'block' : 'none';
 			if(Utils.byId('search-container')) Utils.byId('search-container').style.display = G.db !== null ? 'block' : 'none';

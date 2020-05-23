@@ -1,6 +1,6 @@
 import Utils from './Utils.js'
-import Database from './Database.js'
-import Queries from './Queries.js'
+//import Database from './Database.js'
+//import Queries from './Queries.js'
 import * as Helpers from './MapHelpers.js'
 
 import * as maptalks from '../../vendor/maptalks/maptalks.es.js'
@@ -56,6 +56,7 @@ const Maps = {
 								save: true,
 								fileName: G.appdata.shortname + '_' + (Math.random().toString(36).substring(7)) + '.png',
 							});
+							tmp = undefined;
 						},
 					}, 
 					{
@@ -166,6 +167,7 @@ const Maps = {
 							save: true,
 							fileName: G.appdata.shortname + '_' + (Math.random().toString(36).substring(7)) + '.png',
 						});
+						tmp = undefined;
 					},
 				}, 
 				{
@@ -301,7 +303,7 @@ const Maps = {
 		});
 
 		function changebaselayer(e) {
-			let mid = e.target.id.replace('baselayers', 'map');
+			//let mid = e.target.id.replace('baselayers', 'map');
 			let tmp = G.lmaps[`map_${nid}`].map;
 			tmp.removeBaseLayer();
 			G.lmaps[`map_${nid}`].baselayer = Helpers.Providers(e.target.value);
@@ -314,11 +316,11 @@ const Maps = {
 				crossOrigin: 'anonymous',
 			};
 			tmp.setBaseLayer(new maptalks.TileLayer('base', lay));
-			mid = tmp = lay = undefined;
+			tmp = lay = undefined;
 		}
 		
 		function changeoverlay(e) {
-			let mid = e.target.id.replace('overlays', 'map');
+			//let mid = e.target.id.replace('overlays', 'map');
 			let tmp = G.lmaps[`map_${nid}`].map;
 			tmp.getLayer('overlay').clear();
 			if(String(e.target.value).trim() === '') {
@@ -455,7 +457,7 @@ const Maps = {
 			let lat = parseFloat(place.lat || e.target.dataset.lat);
 			let lon = parseFloat(place.lon || e.target.dataset.lon);
 			let mid = place.mid || e.target.dataset.mid;
-			let display = place.display || e.target.dataset.display;
+			//let display = place.display || e.target.dataset.display;
 			let map = G.lmaps[mid].map;
 
 			let polygon = new maptalks.Rectangle(
@@ -493,7 +495,7 @@ const Maps = {
 			map.panTo(coordinate);
 			map.fitExtent(polygon.getExtent(), 0);
 
-			bbox = lat = lon = mid = display = map = symbol = polygon = coordinate = undefined;
+			bbox = lat = lon = mid = map = symbol = polygon = coordinate = undefined;
 		}
 
 		function searchremove() {

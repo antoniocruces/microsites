@@ -82,7 +82,6 @@ const Cultures = {
 		'continent code': 'código de continente',
 		'country code': 'código de país',
 		'country': 'país',
-		'region': 'región',
 		'city': 'ciudad',
 		'organization': 'organización',
 		'time zone': 'huso horario',
@@ -223,7 +222,6 @@ const Cultures = {
 		'fields': 'campos',
 		'calculate': 'calcular',
 		'coordinates': 'coordenadas',
-		'taxonomies': 'taxonomías',
 		
 		'full screen': 'pantalla completa',
 		

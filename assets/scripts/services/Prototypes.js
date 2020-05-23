@@ -10,9 +10,7 @@ const Prototypes = () => {
 			enumerable: true,
 			writable: true,
 			value: function(query) {
-				query = document.body.dataset ? 
-					(document.body.dataset || {currentpage: 'untitled'}).currentpage : 
-					'untitled';
+				query = (document.body.dataset || {currentpage: 'untitled'}).currentpage;
 				if(this.dataset && this.dataset.title) query = this.dataset.title;
 
 				let xframe = document.createElement('IFRAME');
