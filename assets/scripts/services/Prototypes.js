@@ -120,7 +120,7 @@ const Prototypes = () => {
 			enumerable: true,
 			writable: true,
 			value: function() {
-				return this.filter(a => a !== undefined && a !== 'undefined' && a!== void(0) && a !== null);
+				return this.filter(a => a !== undefined && a !== 'undefined' && a !== null);
 			}
 		},
 		stack: {

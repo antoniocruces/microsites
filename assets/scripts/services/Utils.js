@@ -431,8 +431,8 @@ const Utils = {
 			window.location.href = 'https://www.google.com/';
 			return;
 		}
-		let cookies = new EUCookies();
-		cookies = undefined;
+		new EUCookies();
+		//cookies = undefined;
 	},
 	tablistener: e => {
 		if(document.querySelectorAll('.tablink').length && (e.target.dataset || {target: null}).target) {

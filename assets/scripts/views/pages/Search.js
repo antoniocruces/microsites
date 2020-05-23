@@ -2,7 +2,7 @@ import Utils from './../../services/Utils.js'
 
 let Database;
 let Queries;
-let Charts;
+//let Charts;
 let Stats;
 //let Helpers;
 let Maps;
@@ -20,14 +20,14 @@ let Search = {
 		Promise.all([
 			import('../../services/Database.js'),
 			import('../../services/Queries.js'),
-			import('../../services/Charts.js'), 
+			/* import('../../services/Charts.js'), */
 			import('../../services/Stats.js'),
 			/* import('../../services/StatsHelpers.js'), */
 			import('../../services/Maps.js'),
 		]).then(function(modules) {
 			Database = modules.shift().default;
 			Queries = modules.shift().default;
-			Charts = modules.shift().default;
+			//Charts = modules.shift().default;
 			Stats = modules.shift().default;
 			//Helpers = modules.shift().default;
 			Maps = modules.shift().default;
@@ -411,10 +411,11 @@ let Search = {
 				array = undefined;
 				return valid;
 			}
+			/*
 			function getcolor(prtype) {
 				return Utils.rgb2hex(Utils.getcolorfromcss(`.${prtype}`, 'color'));
 			}
-
+			*/
 			// Listeners functions
 			function setlimits(event) {
 				G.dblimit = event.target.value;

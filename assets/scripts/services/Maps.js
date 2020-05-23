@@ -51,12 +51,12 @@ const Maps = {
 					{
 						item: 'X',
 						click: () => {
-							let tmp = map.toDataURL({
+							map.toDataURL({
 								mimeType: 'image/png',
 								save: true,
 								fileName: G.appdata.shortname + '_' + (Math.random().toString(36).substring(7)) + '.png',
 							});
-							tmp = undefined;
+							//tmp = undefined;
 						},
 					}, 
 					{
@@ -162,12 +162,12 @@ const Maps = {
 				{
 					item: 'X',
 					click: () => {
-						let tmp = map.map.toDataURL({
+						map.map.toDataURL({
 							mimeType: 'image/png',
 							save: true,
 							fileName: G.appdata.shortname + '_' + (Math.random().toString(36).substring(7)) + '.png',
 						});
-						tmp = undefined;
+						//tmp = undefined;
 					},
 				}, 
 				{

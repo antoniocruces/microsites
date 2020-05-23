@@ -30,7 +30,7 @@ let App = {
 
 		function init() {
 			let outputElm = Utils.byId('database-listing-result');
-			let dbFileElm = Utils.byId('dbfile');
+			//let dbFileElm = Utils.byId('dbfile');
 			//let download = Utils.byId('download');
 			//let dbFileTrigger = Utils.byId('dbfiletrigger');
 

@@ -53,10 +53,11 @@ const Helpers = {
 	entropy: (...values) => {
 		let calculationResult = 0;
 		let fraction = 0;
-	
+		/*
 		if(values === undefined) {
 			throw new Error(Utils.c('internal error'));
 		}
+		*/
 		const valuesSum = values.reduce((sum, curr) => sum + curr, 0);
 	
 		for(let v of values) {

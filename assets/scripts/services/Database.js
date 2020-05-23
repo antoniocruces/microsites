@@ -219,7 +219,7 @@ const Database = {
 			tbl.classList.add('w3-no-print');
 		}
 		tbl.innerHTML = values.length ? 
-			values.map(v => valconcat(v, 'li', fid)).join('') : 
+			values.map(v => valconcat(v, 'li')).join('') : 
 			Utils.c('no results').uf();
 		return tbl;
 	},
@@ -647,8 +647,8 @@ const Database = {
 					type = result.values[0][1];
 					title = result.values[0][2];
 					color = `${G.primaryrecords[type].color}-text`;
-					background = G.primaryrecords[type].background;
-					mapcolor = Utils.getcolorfromcss(`.${color}`, 'color');
+					//background = G.primaryrecords[type].background;
+					//mapcolor = Utils.getcolorfromcss(`.${color}`, 'color');
 					icon = G.primaryrecords[type].icon;
 					out.push([
 						`<h4 class="${color}" style="padding-left:0">`,
@@ -954,7 +954,7 @@ const Database = {
 		//let url = event.target.dataset.url === '' ? null : event.target.dataset.url;
 		//let sort = event.target.dataset.sort === '' ? null : event.target.dataset.sort;
 		//let currentpage = event.target.dataset.currentpage === '' ? null : event.target.dataset.currentpage;
-		let query = event.target.dataset.query === '' ? null : event.target.dataset.query;
+		//let query = event.target.dataset.query === '' ? null : event.target.dataset.query;
 		
 		let div = document.createElement('div');
 		div.style.height = '40vh';
