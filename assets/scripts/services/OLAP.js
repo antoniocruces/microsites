@@ -175,7 +175,7 @@ class OLAP {
 
 		const dimensionIndex = structure.dimensions.indexOf(dimension);
 		if(dimensionIndex === -1) {
-			throw new TypeError(Utils.c('dimension not found'), dimension);
+			throw new TypeError(`${Utils.c('dimension not found')}: ${dimension}`);
 		};
 
 		this.points.forEach((point, i) => {

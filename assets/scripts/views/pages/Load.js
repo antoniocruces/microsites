@@ -152,12 +152,12 @@ let App = {
 					
 					listresults(results, queries.filter((o, i) => i > 0));
 
-					let filtertablequery = Queries
+					let tablestructquery = Queries
 						.filter(q => q.group === 'setup')
-						.find(o => o.name === 'filter table setup following').definition;
+						.find(o => o.name === 'tables structure').definition;
 
-					Database.calculatequery(filtertablequery).then(res => {
-						if(!res) {
+					Database.calculatequery(tablestructquery).then(tres => {
+						if(!tres) {
 							showhideresults(false);
 							Utils.msg('performance-msg', '');
 							G.db = null;
@@ -166,7 +166,7 @@ let App = {
 							if(O) Utils.overlay();
 							throw new Error(Utils.c('database error').uf());
 						}
-						if(!Array.isArray(res)) {
+						if(!Array.isArray(tres)) {
 							showhideresults(false);
 							Utils.msg('performance-msg', '');
 							G.db = null;
@@ -175,75 +175,30 @@ let App = {
 							if(O) Utils.overlay();
 							throw new Error(Utils.c('database error').uf());
 						}
-						
-						if(!G.dbfilteredtypes.length && !G.dbtypes.length) {
-							if(res.length) {
-								for(let i = 0; i < res.length; i++) {
-									if(i === 0) {
-										G.dbfilteredtypes = [];
-										G.dbtypes = [];
-										res[i].values.forEach(o => {
-											G.dbfilteredtypes.push({
-												rkey: o[0],
-												filtered: o[1],
-												total: o[1],
-												percent: Math.round((o[1] / o[1]) * 100, 1),
-											});
-											G.dbtypes.push(o[0]);
-										});
-									}
-								}
-							}
-						}
+						let tbres = tres[0];
+						let tbelm = Utils.byId('database-load-structure');
+						tbelm.innerHTML = '';
+						tbelm.appendChild(
+							Database.tablecreate(
+								Utils.c('tables'), 
+								[
+									'name',
+									'description',
+									'fields'
+								], 
+								tbres.values.map(r => {
+									let tmp = r[1];
+									let tm1 = tmp.split('(')[1];
+									let tm2 = tm1.replace(')', '').split(',').map(q => q.trim()).join(', ');
+									tmp = tm1 = undefined;
+									return [r[0], C[Utils.l].struct[r[0]], tm2];
+								})
+							)
+						);
 
-						let tablestructquery = Queries
-							.filter(q => q.group === 'setup')
-							.find(o => o.name === 'tables structure').definition;
-	
-						Database.calculatequery(tablestructquery).then(tres => {
-							if(!tres) {
-								showhideresults(false);
-								Utils.msg('performance-msg', '');
-								G.db = null;
-								G.dbloaded = false;
-								Utils.dbloadedindicator();
-								if(O) Utils.overlay();
-								throw new Error(Utils.c('database error').uf());
-							}
-							if(!Array.isArray(tres)) {
-								showhideresults(false);
-								Utils.msg('performance-msg', '');
-								G.db = null;
-								G.dbloaded = false;
-								Utils.dbloadedindicator();
-								if(O) Utils.overlay();
-								throw new Error(Utils.c('database error').uf());
-							}
-							let tbres = tres[0];
-							let tbelm = Utils.byId('database-load-structure');
-							tbelm.innerHTML = '';
-							tbelm.appendChild(
-								Database.tablecreate(
-									Utils.c('tables'), 
-									[
-										'name',
-										'description',
-										'fields'
-									], 
-									tbres.values.map(r => {
-										let tmp = r[1];
-										let tm1 = tmp.split('(')[1];
-										let tm2 = tm1.replace(')', '').split(',').map(q => q.trim()).join(', ');
-										tmp = tm1 = undefined;
-										return [r[0], C[Utils.l].struct[r[0]], tm2];
-									})
-								)
-							);
-	
-							Utils.perftimer(false, Utils.c('displaying').uf());
-							if(O) Utils.overlay();
-							results = tbres = tbelm = undefined;
-						});
+						Utils.perftimer(false, Utils.c('displaying').uf());
+						if(O) Utils.overlay();
+						results = tbres = tbelm = undefined;
 					});
 				});
 			}
@@ -478,7 +433,7 @@ let App = {
 						let meter = document.querySelector('.meterloading');
 						let textm = document.querySelector('#performance-msg');
 						let stars = (l, t) => {
-							let fills = Math.round((l / t) * 10, 0);
+							let fills = Math.round((l / t) * 10);
 							let voids = 10 - fills;
 							let fillc = '*';
 							let voidc = '·';
@@ -487,8 +442,8 @@ let App = {
 						if(!filesize) filesize = event.total;
 						if(meter && textm) {
 							let currenttime = window.performance.now();
-							let elapsed = Math.round((currenttime - filetime) / 1000, 0);
-							let speed = Math.round(event.loaded / elapsed, 0);
+							let elapsed = Math.round((currenttime - filetime) / 1000);
+							let speed = Math.round(event.loaded / elapsed);
 							meter.innerHTML = [							
 								`${Utils.c('download in process').uf()}. `,
 								`<code class="w3-codespan">${stars(event.loaded, event.total)}</code> `,

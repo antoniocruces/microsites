@@ -160,14 +160,14 @@ const Config = {
 		listing: {total: null, current: null},
 	},
 	dblimit: 1000,
-	dbtypes: [],
+	/* dbtypes: [], */
 	
 	dbfilter: [],
 	dbfilterrelations: [],
 	dbfilterrelationslist: [],
 	dbfilterfeatures: [],
 	dbfilteredlength: null,
-	dbfilteredtypes: [],
+	/* dbfilteredtypes: [], */
 	dbfilterincluderelatives: false,
 		
 	dblistingfeatures: {

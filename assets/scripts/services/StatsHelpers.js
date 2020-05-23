@@ -72,7 +72,7 @@ const Helpers = {
 		// Values in format {fraction: 2/3, entropyTuple: [1, 2, 3]}
 		let calculationResult = 0;
 	
-		if (!values) {
+		if (values === undefined) {
 			throw new Error(Utils.c('internal error'));
 		}
 	

@@ -92,7 +92,7 @@ let App = {
 			
 			Utils.fetchtextasync(`./assets/netstatus/?u=${G.dataserver}d`).then(res => {
 				if(!res) return;
-				if(res.status < 200 && res.status > 299) throw new Error;
+				if(res.status < 200 || res.status > 299) throw new Error;
 				if(Utils.byId('servers-data')) Utils.msg('servers-data', `${res} ms`);
 				if(Number(res) < G.servermaxttl) {
 					if(Utils.byId('servers-data')) Utils.byId('servers-data').classList.remove('w3-text-red');
@@ -113,7 +113,7 @@ let App = {
 			});
 			Utils.fetchtextasync(`./assets/netstatus/?u=${G.appserver}`).then(res => {
 				if(!res) return;
-				if(res.status < 200 && res.status > 299) return;
+				if(res.status < 200 || res.status > 299) return;
 				Utils.msg('servers-app', `${res} ms`);
 				if(Number(res) < G.servermaxttl) {
 					if(Utils.byId('servers-app')) Utils.byId('servers-app').classList.remove('w3-text-red');
@@ -132,7 +132,7 @@ let App = {
 				if(!text) throw new Error(Utils.c('unresponsive data server').uf());
 				if(!Utils.isvalidjson(text)) throw new Error(Utils.c('invalid response').uf());
 				let res = JSON.parse(text);
-				if(res.status < 200 && res.status > 299) return;
+				if(res.status < 200 || res.status > 299) return;
 
 				let total = Object.values(res).reduce((a, b) => a + b, 0);
 				G.rdbrecords = total;

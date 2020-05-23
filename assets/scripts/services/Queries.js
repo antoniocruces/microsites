@@ -84,17 +84,9 @@ const Queries = [
 			`BEGIN TRANSACTION;`,
 			`DROP TABLE IF EXISTS tirel;`,
 			`COMMIT;`,
-			/*
-			`BEGIN TRANSACTION;`,
-			`DROP TABLE IF EXISTS tdext;`,
-			`COMMIT;`,
-
-			`BEGIN TRANSACTION;`,
-			`DROP TABLE IF EXISTS tiext;`,
-			`COMMIT;`,
-			*/
 		].join(''),
 	},
+	/*
 	{
 		group: 'setup',
 		name: `filter table setup following`,
@@ -103,6 +95,7 @@ const Queries = [
 			`GROUP BY rkey ORDER BY rkey;`,
 		].join(''),
 	},
+	*/
 	{
 		group: 'setup',
 		name: `tables structure`,

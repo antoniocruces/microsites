@@ -740,7 +740,7 @@ const Prototypes = () => {
 			enumerable: true,
 			writable: true,
 			value: function() {
-				return !this === null;
+				return this !== null;
 			}
 		},
 		empty: {

@@ -194,7 +194,6 @@ const Cultures = {
 		'title': 'título',
 		'feature': 'característica',
 		'features': 'características',
-		'taxonomies': 'taxonomías',
 		'active filter': 'filtro activo',
 		'search term': 'término buscado',
 		'rows per page': 'filas por página',
@@ -218,10 +217,6 @@ const Cultures = {
 		
 		'gender': 'género',
 		'date': 'fecha',
-		'years': 'años',
-		'months': 'meses',
-		'weeks': 'semanas',
-		'days': 'días',
 		'town': 'localidad',
 		'place': 'lugar',
 		'field': 'campo',
